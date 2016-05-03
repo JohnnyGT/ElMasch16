@@ -1,0 +1,9 @@
+/ElMasch.pdf
+*.synctex*
+/tmp
+*.out
+*.aux
+*.log
+*.dvi
+*.toc
+Zusammenfassung.pdf
