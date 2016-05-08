@@ -1,56 +1,160 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Makros & anderer Low-Level bastel %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\makeatletter
-%% Makros für Titel, Autor und Datum 
-%% Dank diesem Makro stehen Titel, Autor und Datum überall im Dokument zur verfügung
-%% Date hat zudem den Default-Wert \today
-\def\@Title{}
-\def\@Author{}
-\def\@Date{\today}
-\newcommand{\Title}{\@Title}
-\newcommand{\Author}{\@Author}
-\newcommand{\Date}{\@Date}
-\AtBeginDocument{%
-  \let\@Title\@title
-  \let\@Author\@author
-  \let\@Date\@date
-}
-
-%% Makros für den Arraystretch (bei uns meist in Tabellen genutzt, welche Formeln enthalten)
-% Default Value
-\def\@ArrayStretchDefault{1} % Entspricht der Voreinstellung von Latex
-
-% Setzt einen neuen Wert für den arraystretch
-\newcommand{\setArrayStretch}[1]{\renewcommand{\arraystretch}{#1}}
-
-% Setzt den arraystretch zurück auf den default wert
-\newcommand{\resetArrayStretch}{\renewcommand{\arraystretch}{\@ArrayStretchDefault}}
-
-% Makro zum setzten des Default arraystretch. Kann nur in der Präambel verwendet werden.
-\newcommand{\setDefaultArrayStretch}[1]{%
-	\AtBeginDocument{%
-		\def\@ArrayStretchDefault{#1}
-		\renewcommand{\arraystretch}{#1}
-	}
-}
-\makeatother
-
+% Genereller Header
+\documentclass[11pt,twoside,a4paper,fleqn]{article}
+% Dateiencoding
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}	%ä,ü...
+% Seitenränder
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm,includeheadfoot]{geometry}
+% Sprachpaket
+\usepackage[english, ngerman]{babel} % Silbentrennung und Rechtschreibung Englisch und Deutsch
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Wichtige Packages %%
 %%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[utf8]{inputenc} % UTF-8 unterstützung
-\usepackage[T1]{fontenc}	%ä,ü...
-\usepackage[english, ngerman]{babel} % Silbentrennung und Rechtschreibung Englisch und Deutsch
-\usepackage[automark]{scrpage2} % Header und Footer
-\usepackage{tabularx}
-\usepackage{amssymb} % Das mathtools package ist eine Erweiterung zum amsmath package.
-\usepackage{mathtools}
-\usepackage{mathabx} % Package mit vielen weiteren Mathe Symbolen
-\usepackage{amsmath}
+\usepackage{amssymb,amsmath,fancybox,graphicx,color,lastpage,wrapfig,fancyhdr,hyperref,verbatim,floatflt,multicol,multirow,rotating,pdflscape,array,longtable,listings,trfsigns,trsym,tabularx,mathtools,mathabx}
+
+% Zum Bilder einfach in Tabellen einfügen (valign=t)
+\usepackage[export]{adjustbox}
 
 % Für Abbildungen mit mehreren kleinen Bilder
 % Doku: http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
 \usepackage{caption}
 \usepackage{subcaption}
+
+
+%%%%%%%%%%%%%%%%%%%%
+% Generelle Makros %
+%%%%%%%%%%%%%%%%%%%%
+\newcommand{\skript}[1]{$_{\textcolor{red}{\mbox{\small{Skript S.#1}}}}$}
+\newcommand{\verweis}[2]{\small{(siehe auch \ref{#1}, #2 (S. \pageref{#1}))}}
+\newcommand{\verweiskurz}[1]{(\small{siehe \ref{#1}\normalsize)}}
+\newcommand{\subsubadd}[1]{\textcolor{black}{\mbox{#1}}}
+\newcommand{\formelbuch}[1]{$_{\textcolor{red}{\mbox{\small{S#1}}}}$}
+
+\newcommand{\kuchling}[1]{$_{\textcolor{red}{\mbox{\small{Kuchling #1}}}}$}
+\newcommand{\stoecker}[1]{$_{\textcolor{grey}{\mbox{\small{Stöcker #1}}}}$}
+\newcommand{\sachs}[1]{$_{\textcolor{blue}{\mbox{\small{Sachs S. #1}}}}$}
+\newcommand{\hartl}[1]{$_{\textcolor{green}{\mbox{\small{Hartl S. #1}}}}$}
+
+\newcommand{\schaum}[1]{\tiny Schaum S. #1}
+
+\newcommand{\skriptsection}[2]{\section{#1 {\tiny Skript S. #2}}}
+\newcommand{\skriptsubsection}[2]{\subsection{#1 {\tiny Skript S. #2}}}
+\newcommand{\skriptsubsubsection}[2]{\subsubsection{#1 {\tiny Skript S. #2}}}
+
+\newcommand{\matlab}[1]{\footnotesize{(Matlab: \texttt{#1})}\normalsize{}}
+
+% Syntax: \bmu{Pfad zum Bild}{Bildgrösse}{Beschriftung des Bildes}
+\newcommand{\bl}[2]{
+	\begin{figure}[h]
+		\flushleft  % linksbuendig
+		\includegraphics[width=#1]{#2} \\
+	\end{figure}
+}
+\newcommand{\br}[2]{
+	\begin{figure}[h]
+		\flushright  % rechtsbuendig
+		\includegraphics[width=#1]{#2} \\
+	\end{figure}
+}
+
+\newcommand{\bild}[2]{
+	\begin{figure}[h]
+		\centering  % zentriert
+		\includegraphics[width=#1]{#2} \\
+	\end{figure}
+}
+
+\newcommand\tabbild[2][]{%
+	\raisebox{0pt}[\dimexpr\totalheight+\dp\strutbox\relax][\dp\strutbox]{%
+		\includegraphics[#1]{#2}%
+	}%
+}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}} %Tabelle linksausgerichtet
+\newcolumntype{L}[1]{>{\raggedleft\arraybackslash}p{#1}} %Tabelle rechtsausgerichtet
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\definecolor{mygray}{RGB}{190, 190, 190}
+\def\Int{\mbox{\Large$\displaystyle\int$\normalsize}}
+\def\OInt{\mbox{\Large$\displaystyle\oint$\normalsize}}
+
+
+
+%%%%%%%%%%
+% Farben %
+%%%%%%%%%%
+\definecolor{black}{rgb}{0,0,0}
+\definecolor{red}{rgb}{1,0,0}
+\definecolor{white}{rgb}{1,1,1}
+\definecolor{grey}{rgb}{0.8,0.8,0.8}
+\definecolor{green}{rgb}{0,.8,0.05}
+\definecolor{brown}{rgb}{0.603,0,0}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mathematische Operatoren %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\Imag}{Im}
+%\DeclareMathOperator{\e}{e}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\PolyGrad}{PolyGrad}
+
+%Makro für 'd' von Integral- und Differentialgleichungen 
+\newcommand*{\diff}{\mathop{}\!\mathrm{d}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fouriertransformationen %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Fouriertransformationen
+\unitlength1cm
+\newcommand{\FT}
+{
+	\begin{picture}(1,0.5)
+	\put(0.2,0.1){\circle{0.14}}\put(0.27,0.1){\line(1,0){0.5}}\put(0.77,0.1){\circle*{0.14}}
+	\end{picture}
+}
+
+
+\newcommand{\IFT}
+{
+	\begin{picture}(1,0.5)
+	\put(0.2,0.1){\circle*{0.14}}\put(0.27,0.1){\line(1,0){0.45}}\put(0.77,0.1){\circle{0.14}}
+	\end{picture}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Allgemeine Einstellungen %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%PDF Info
+\hypersetup{pdfauthor={\authorinfo},pdftitle={\titleinfo},colorlinks=false}
+\author{\authorinfo}
+\title{\titleinfo}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Kopf- und Fusszeile %
+%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\fancyhf{}
+%Linien oben und unten
+\renewcommand{\headrulewidth}{0.5pt} 
+\renewcommand{\footrulewidth}{0.5pt}
+
+\fancyhead[L]{\titleinfo{ }\tiny{(\versioninfo)}}
+%Kopfzeile rechts bzw. aussen
+\fancyhead[R]{Seite \thepage { }von \pageref{LastPage}}
+%Fusszeile links bzw. innen
+\fancyfoot[L]{\footnotesize{\authorinfo}}
+%Fusszeile rechts bzw. ausen
+\fancyfoot[R]{\footnotesize{\today}}
+% Einrücken verhindern versuchen
+\setlength{\parindent}{0pt}
+
+% Zeilenhöhe Tabellen:
+\newcommand{\arraystretchOriginal}{1.5}
+\renewcommand{\arraystretch}{\arraystretchOriginal}
+
+
