@@ -1,51 +1,77 @@
 \section{Asynchronmotor}
-\textcolor{green}{Vorteil}: \begin{itemize}
+\textcolor{green}{Vorteil}:
+\begin{itemize}
 	\item sehr einfacher Aufbau
 	\item sehr robust und widerstandsfähig 
 \end{itemize}
-\textcolor{red}{Nachteil}: \begin{itemize}
+\textcolor{red}{Nachteil}:
+\begin{itemize}
 	\item Extrem hoher Anlaufstrom \newline
-		-> dies wird vermindert mit der Stern-Dreieck-Umschalt-Methode \newline (Im Dreieck 3 Mal mehr Leistung im Dreieckbetrieb)
+		$\Rightarrow$ dies wird vermindert mit der Stern-Dreieck-Umschalt-Methode \newline
+        (Im Dreieck 3 Mal mehr Leistung im Dreieckbetrieb)
 \end{itemize}
+
 \subsection{Aufbau  Ständer}
-\begin{minipage}[b]{0.45\linewidth}
-	\includegraphics[scale = 0.3]{images/AsynchronmotorAufbau}
-\end{minipage}
-\begin{minipage}[b]{0.28\linewidth}
-	\includegraphics[scale = 0.3]{images/AQuerschnitt}
-\end{minipage}
-\begin{minipage}[b]{0.33\linewidth}
-	\includegraphics[scale = 0.4]{images/AsynchronmotorStaenderkern}
-\end{minipage}\\
-\subsection{Aufbau Läufer}
-\begin{minipage}[b]{0.5\linewidth}
-	\includegraphics[scale = 0.4]{images/AsynchronRotor}
-\end{minipage}
-\begin{minipage}[b]{0.5\linewidth}
-	\includegraphics[scale = 0.4]{images/QuerschnittAsynchronrotor}
-\end{minipage} \\\\
-Wirbelströme im Eisen entstehen durch die Induktion des Rotors in den Stator \newline => Stator erwärmt sich.\newline Durch den Rillenaufbau des Stators können diese Wirbelströme bzw. die Temperaturansteigung minimiert \newline werden.\\
+    \begin{minipage}[b]{0.45\linewidth}
+    	\includegraphics[scale = 0.3]{images/AsynchronmotorAufbau}
+    \end{minipage}
+    \begin{minipage}[b]{0.28\linewidth}
+    	\includegraphics[scale = 0.3]{images/AQuerschnitt}
+    \end{minipage}
+    \begin{minipage}[b]{0.33\linewidth}
+    	\includegraphics[scale = 0.4]{images/AsynchronmotorStaenderkern}
+    \end{minipage}\\
+    \subsection{Aufbau Läufer}
+    \begin{minipage}[b]{0.5\linewidth}
+    	\includegraphics[scale = 0.4]{images/AsynchronRotor}
+    \end{minipage}
+    \begin{minipage}[b]{0.5\linewidth}
+    	\includegraphics[scale = 0.4]{images/QuerschnittAsynchronrotor}
+    \end{minipage}
+    \\ \\
+    Wirbelströme im Eisen entstehen durch die Induktion des Rotors in den Stator \newline
+    $\Rightarrow$ Stator erwärmt sich.\newline
+    Durch den Rillenaufbau des Stators können diese Wirbelströme bzw. die Temperaturansteigung minimiert werden.
+    \\
+    Schlupf $\widehat{=}$ der Abweichung zu der Synchronen Drehzahl 
+    \clearpage
+    \pagebreak
 
-
-Schlupf $\widehat{=}$ der Abweichung zu der Synchronen Drehzahl 
-\clearpage
-\pagebreak
 \subsection{Formeln Läufer}
-\includegraphics[scale = 0.5]{images/QuerschnittAmotor}\\\\
-\begin{tabular}[b]{|C{4cm}| P{8cm} | P{5cm}|}
-	\hline
-	\textbf{Induzierte Spannung} & \begin{equation*}
-	U_i = 4.44\cdot f\cdot w\cdot\xi\cdot\phi
-	\end{equation*} & f $\widehat{=}$ Frequenz \newline w $\widehat{=}$ Windungszahl \newline $\xi$ = Wicklungsfaktor \newline $\phi$ = Magnetischer Fluss \\
-	\hline
-\textbf{Elektromagnetische Kraft}	& \begin{equation*} \vec{F_2} = I_2\cdot\vec{I_2}\times\vec{B_1}
-\end{equation*} & \\
-	\hline
-\textbf{Mechanisches Drehmoment}	& \begin{equation*}
-	\vec{M_2} = \vec{r_2}\times\vec{F_2}
-\end{equation*} & \\
-	\hline
-	& & \\
-	\hline
-\end{tabular}
-\clearpage
+    \includegraphics[scale = 0.4]{images/QuerschnittAmotor}
+    \\ \\
+    \begin{tabular}[b]{|C{4cm}| P{8cm} | P{5cm}|}
+    	\hline
+    	\textbf{Induzierte Spannung} &
+        \[ U_i = 4.44\cdot f\cdot w\cdot\xi\cdot\phi \] &
+        f $\widehat{=}$ Frequenz \newline
+        w $\widehat{=}$ Windungszahl \newline
+        $\xi$ = Wicklungsfaktor \newline
+        $\phi$ = Magnetischer Fluss
+        \\ \hline
+        
+        \textbf{Elektromagnetische Kraft}	&
+        \begin{equation*} \vec{F_2} = I_2\cdot\vec{I_2}\times\vec{B_1}\end{equation*} &
+        \\ \hline
+        
+        \textbf{Mechanisches Drehmoment}	&
+        \begin{equation*}\vec{M_2} = \vec{r_2}\times\vec{F_2}\end{equation*}
+        \[ M = \frac{1}{2 \pi n_1}\frac{P_Cu2}{s} \]&
+        \\ \hline
+        
+        \textbf{Verluste}\newline
+        \tabbild[scale = 0.3]{images/PVerluste}&
+        \[ P_{D1}=P_m+P_{C22} \]
+        \[ P_{D1}=2\cdot\pi\cdot n_1\cdot M \quad
+         P_m = 2\cdot\pi\cdot n\cdot M \]&
+         $ P_1 $ - primäre Netzleistung \newline
+         $ P_{Cu} $ - Ohmsche Verluste \newline
+         $ P_{Fe} $ - Blechkernverluste \newline
+         $ P_{D1} $ - Drehfeldleistunf \newline
+         $ P_m $ - mechanische Leistung \newline
+         $ P_r $ - Reibungsverluste und Lüftung \newline
+         $ P_m ' $ - mech. Nutzleistung \newline
+         M - Drehmoment
+        \\ \hline
+    \end{tabular}
+    \clearpage
