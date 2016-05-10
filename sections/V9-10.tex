@@ -40,7 +40,7 @@
 \subsection{Formeln Läufer}
     \includegraphics[scale = 0.4]{images/QuerschnittAmotor}
     \\ \\
-    \begin{tabular}[b]{|C{4cm}| P{8cm} | P{5cm}|}
+    \begin{longtable}{| p{.25\textwidth} | p{.40\textwidth} | p{.30\textwidth} |}
     	\hline
     	\textbf{Induzierte Spannung} &
         \[ U_i = 4.44\cdot f\cdot w\cdot\xi\cdot\phi \] &
@@ -54,16 +54,51 @@
         \begin{equation*} \vec{F_2} = I_2\cdot\vec{I_2}\times\vec{B_1}\end{equation*} &
         \\ \hline
         
-        \textbf{Mechanisches Drehmoment}	&
-        \begin{equation*}\vec{M_2} = \vec{r_2}\times\vec{F_2}\end{equation*}
-        \[ M = \frac{1}{2 \pi n_1}\frac{P_Cu2}{s} \]&
+        \textbf{Mech. Drehmoment}	&
+        \begin{equation*}\vec{M_2} = \vec{r_2}\times\vec{F_2}\end{equation*}&
         \\ \hline
+        
+        \textbf{Relativdrehzahl}&
+        \[ n_1= \frac{f_1}{p}\]
+        \[ n_2=n_1 - n \]&
+        n = Drehzahl des Läufers \newline
+        $n_1$ = Synchrondrehzahl \newline
+        $ n_2 $ = Relativdrehzahl
+        \\ \hline
+        
+        \textbf{Schlupf}&
+        \[ s= \frac{n_2}{n_1}=\frac{n_1-n}{n_1}=\frac{f_2}{f_1} \]&
+        $ f_1 $ = Frequenz Drehfeld \newline
+        $ f_2 $ = Frequenz Anker \newline
+        Synchroner Lauf: s = 0 \newline
+        Stillstand: s = 1
+        \\ \hline 
+        
+        \textbf{Induzierter Strom des Läufers}&
+         \[ I_2 = \frac{U_{i20}}{\sqrt{R_2^2+X_{2\sigma^2}}} \]&
+         \\ \hline
+        
+        \textbf{Stillstand}&
+        s = 1 \newline
+        $ f_2 = f_1 $ \newline
+        \[ I_2 = I_{2max} = \frac{U_{i20}}{\sqrt{(R_2/2)^2+X_{2\sigma^2}}} \]&
+        \tabbild[scale = 0.3]{images/FlussStillstand}       
+        \\ \hline
+        
+         \textbf{Synchronlauf}&
+         s = 0 \newline
+         $ f_2 = 0 $\newline
+         \[ I_2 = I_{2max} = 0\]&
+         \tabbild[scale = 0.3]{images/FlussSynchron}
+         \\ \hline
+
         
         \textbf{Verluste}\newline
         \tabbild[scale = 0.3]{images/PVerluste}&
         \[ P_{D1}=P_m+P_{C22} \]
         \[ P_{D1}=2\cdot\pi\cdot n_1\cdot M \quad
-         P_m = 2\cdot\pi\cdot n\cdot M \]&
+         P_m = 2\cdot\pi\cdot n\cdot M \]
+        \[ M = \frac{1}{2 \pi n_1}\frac{P_Cu2}{s} \]&
          $ P_1 $ - primäre Netzleistung \newline
          $ P_{Cu} $ - Ohmsche Verluste \newline
          $ P_{Fe} $ - Blechkernverluste \newline
@@ -73,5 +108,7 @@
          $ P_m ' $ - mech. Nutzleistung \newline
          M - Drehmoment
         \\ \hline
-    \end{tabular}
+        
+        
+    \end{longtable}
     \clearpage

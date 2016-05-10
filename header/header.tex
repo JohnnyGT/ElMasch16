@@ -155,8 +155,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %Pdf Info
-\hypersetup{pdfauthor={\authorinfo},pdftitle={\titleinfo},colorlinks=false}
-\author{\authorinfo}
+\hypersetup{pdfauthor={\authorname},pdftitle={\titleinfo},colorlinks=false}
+\author{\authorname}
 \title{\titleinfo}
 
 % Abstände Text zu Übertiteln / Einzug
@@ -173,23 +173,29 @@
 \renewcommand{\headrulewidth}{0.5pt} 
 \renewcommand{\footrulewidth}{0.5pt}
 
+%Kopfzeile links bzw innen
 \fancyhead[L]{\titleinfo{ }\tiny{(\versioninfo)}}
+%Kopfzeile mitte
+%\fancyhead[C]{}
 %Kopfzeile rechts bzw. aussen
 \fancyhead[R]{Seite \thepage { }von \pageref{LastPage}}
+
 %Fusszeile links bzw. innen
-\fancyfoot[L]{\footnotesize{\authorinfo}}
+\fancyfoot[L]{\footnotesize{\authorname}}
+%Fusszeile mitte
+\fancyfoot[C]{\footnotesize{\authoremail}}
 %Fusszeile rechts bzw. ausen
 \fancyfoot[R]{\footnotesize{\today}}
 % Einrücken verhindern versuchen
 \setlength{\parindent}{0pt}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Makros & anderer Low-Level bastel %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Zeilenhöhe Tabellen:
 \newcommand{\arraystretchOriginal}{1.5}
 \renewcommand{\arraystretch}{\arraystretchOriginal}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Makros & anderer Low-Level bastel %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \makeatletter
 %% Makros für den Arraystretch (bei uns meist in Tabellen genutzt, welche Formeln enthalten)
 % Default Value
