@@ -89,27 +89,27 @@
               \newline
               \tabbild[scale=0.6]{images/StatordqSM1}&
               $ \varPhi_m(y_r,i) = L(y_r(t)) \cdot i(t) $\newline
-              \[ u_{Statorkreis}(t)=R\cdot i(t) + \frac{d\varPhi_m}{dt}(t) = R \cdot i(t) + \frac{d}{dt}\left[L(y_r(t))\cdot i(t) \right]\] 
-              \[\qquad = R \cdot i(t) + \frac{dL}{d y_r} (y_r)\cdot \frac{d y_r}{dt} i(t) +L(y_r)\cdot \frac{di}{dt}(t)\]
-              \[ p_{Statorkreis}(t)=u(t) \cdot i(t) = R\cdot i^2(t)+\frac{dL}{dY_r}(y_r)\cdot \omega_r\cdot i^2(t)+L\cdot i(t)\cdot \frac{di}{dt}(t) \]
+              \[ u_{Statorkreis}(t)=R\cdot i(t) + \frac{\diff\varPhi_m}{\diff t}(t) = R \cdot i(t) + \frac{\diff}{\diff t}\left[L(y_r(t))\cdot i(t) \right]\] 
+              \[\qquad = R \cdot i(t) + \frac{\diff L}{\diff  y_r} (y_r)\cdot \frac{\diff  y_r}{\diff t} i(t) +L(y_r)\cdot \frac{\diff i}{\diff t}(t)\]
+              \[ p_{Statorkreis}(t)=u(t) \cdot i(t) = R\cdot i^2(t)+\frac{\diff L}{\diff Y_r}(y_r)\cdot \omega_r\cdot i^2(t)+L\cdot i(t)\cdot \frac{\diff i}{\diff t}(t) \]
               \\ \hline
               
               \textbf{Elektrische Leistung des Stators}&
-              \[ p(t) = R \cdot i^2(t) + \frac{dL}{dy_r}\cdot \omega_r \cdot i^2(t) + L \cdot i(t) \cdot\frac{di}{dt}(t) \]
-              \[=p_{Cu}(t)+\frac{dw_m}{dt}(t)+\frac{1}{2}\cdot \frac{dL}{dy_r}(y_r)\cdot \omega_r \cdot i^2(t) \]
+              \[ p(t) = R \cdot i^2(t) + \frac{\diff L}{\diff y_r}\cdot \omega_r \cdot i^2(t) + L \cdot i(t) \cdot\frac{\diff i}{\diff t}(t) \]
+              \[=p_{Cu}(t)+\frac{\diff w_m}{\diff t}(t)+\frac{1}{2}\cdot \frac{\diff L}{\diff y_r}(y_r)\cdot \omega_r \cdot i^2(t) \]
               \\ \hline
               
               \textbf{Zeitableitung magnetischer Energie}&
-              \[ w_m(t) = \frac{1}{2} \cdot L(y_r) \cdot i^2(t) \Rightarrow \frac{d}{dt} \left( \frac{1}{2} \cdot L(y_r) \cdot i^2(t) \right) \]
-              \[=\frac{1}{2}\cdot \frac{dL}{dy_r}(y_r)\cdot\omega_r \cdot i^2(t) + L \cdot i(t) \cdot \frac{di}{dt}(t) \]
+              \[ w_m(t) = \frac{1}{2} \cdot L(y_r) \cdot i^2(t) \Rightarrow \frac{\diff }{\diff t} \left( \frac{1}{2} \cdot L(y_r) \cdot i^2(t) \right) \]
+              \[=\frac{1}{2}\cdot \frac{\diff L}{\diff y_r}(y_r)\cdot\omega_r \cdot i^2(t) + L \cdot i(t) \cdot \frac{\diff i}{\diff t}(t) \]
               \\ \hline
               
               \textbf{Rotorleistung}&
-              \[ p_\delta(t)= \frac{1}{2}\cdot \frac{dL}{dy_r}(y_r)\cdot \omega_r \cdot i^2(t) \]
+              \[ p_\delta(t)= \frac{1}{2}\cdot \frac{\diff L}{\diff y_r}(y_r)\cdot \omega_r \cdot i^2(t) \]
               \\ \hline
               
               \textbf{Motormoment}&
-              \[ m_M(t)=\frac{p_\delta}{\omega_r}(t)=\frac{1}{2}\cdot\frac{dL}{dy_r}(y_r)\cdot i^2(t) \]
+              \[ m_M(t)=\frac{p_\delta}{\omega_r}(t)=\frac{1}{2}\cdot\frac{\diff L}{\diff y_r}(y_r)\cdot i^2(t) \]
               \\ \hline
               
                \newline
@@ -117,6 +117,34 @@
                \newline
               \tabbild[scale=0.7]{images/MomentdqSMY}
               \\ \hline
+              
+              \textbf{Betriebsverhalten}\newline
+              \[ J_g \frac{\diff \omega_r}{\diff t}= J_g \frac{\omega_s - \omega_1}{T_s} = M_M - M_L \] \newline
+               $ \omega_s = 2\pi\frac{n_s}{60}=2\pi\frac{f_s}{N_p}=\alpha_0 f_s $&
+              $ J_g $ = Motorbezogenes Trägheitsmoment \newline
+              $ M_M $ = Motorbezogenes Drehmoment \newline
+              $ M_L $ = Lastmoment \newline
+              $ \omega_s $ = Kreisgeschwindigkeit Statorfeld \newline
+              $ \omega_1 $ = Kreisgeschwindigkeit des Rotors \newline
+              $\Rightarrow  \omega_1 = 0 \Rightarrow$ Motor im Stillstand \newline
+              \\ \hline
+              
+              \textbf{Lastmoment} \newline
+              \[ M_L(f_s,\omega_1) = M_M -J_g\frac{\omega_s}{T_s}+J_g\frac{\omega_1}{T_s}\]
+              \[=M_m -J_g\alpha_0F_s^2+J_g\omega_1f_s \]&
+              \newline
+              $ F_s = \frac{1}{T_s} $ = Schaltfrequenz\newline
+              $ \omega_1 $ = Anfangsgeschwindigkeit \newline
+              \\ \hline
+              
+              \textbf{Anlaufkennlinie}\newline
+              \tabbild[scale=0.4]{images/AnlaufkennlinieSM.JPG}&
+              $ f_{AG} $ = Anlaufgrenzfrequenz \newline
+              $ f_{BG} $ =  Betriebsgrenzfrequenz
+              \\ \hline
+              
+              
+              
               
               
               
