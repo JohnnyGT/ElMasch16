@@ -40,19 +40,20 @@
             Das magnetische Feld der ersten zwei Spulen wird erzeugt. \newline
             Die Reluktanzkraft wirkt auf den Rotor um die Lluftspalte zu verringern. \newline
             Das mechanische Moment wird erzeugt.
-            \\ \hline
+            %\\ \hline
             
             %TODO Passende Grafik einfügen ca S.24 Vorlesung Aktive Wicklungen beachten.
-            \tabbild[scale=0.35]{images/ReluktanzSM1.JPG}\vline
-            \tabbild[scale=0.35]{images/ReluktanzSM2.JPG}&
-            \tabbild[scale=0.35]{images/ReluktanzSM3.JPG}\vline
-            \tabbild[scale=0.35]{images/ReluktanzSM4.JPG}
-            \\ \hline
-            
-            \tabbild[scale=0.35]{images/ReluktanzSM11.JPG}\vline
-            \tabbild[scale=0.35]{images/ReluktanzSM21.JPG}&
-            \tabbild[scale=0.35]{images/ReluktanzSM3.JPG}\vline
-            \tabbild[scale=0.35]{images/ReluktanzSM41.JPG}
+            %Evt mit \multicolumn formatieren
+%            \tabbild[scale=0.35]{images/ReluktanzSM1.JPG}\vline
+%            \tabbild[scale=0.35]{images/ReluktanzSM2.JPG}&
+%            \tabbild[scale=0.35]{images/ReluktanzSM3.JPG}\vline
+%            \tabbild[scale=0.35]{images/ReluktanzSM4.JPG}
+%            \\ \hline
+%            
+%            \tabbild[scale=0.35]{images/ReluktanzSM11.JPG}\vline
+%            \tabbild[scale=0.35]{images/ReluktanzSM21.JPG}&
+%            \tabbild[scale=0.35]{images/ReluktanzSM3.JPG}\vline
+%            \tabbild[scale=0.35]{images/ReluktanzSM41.JPG}
             
             \\ \lasthline
         \end{longtable}
@@ -69,26 +70,30 @@
             \textbf{Grundgleichnung} \newline
             Stator-Zahnzahl: $  MZ_s $ = 4 \newline
             Rotor-Zahnzahl: $ Z_R $ = 2 \newline
-            Stator-Winkel: $ \alpha_S=\frac{2\pi}{Z_s}=90\textdegree $ \newline
-            Rotor-Winkel: $ \alpha_R=\frac{2\pi}{Z_R}=180\textdegree $ \newline
+            Stator-Winkel: $ \alpha_S=\frac{2\pi}{Z_s}=90$\textdegree  \newline
+            Rotor-Winkel: $ \alpha_R=\frac{2\pi}{Z_R}=180$\textdegree \newline
             Vollschritt-Winkel: $ \alpha_0 = \alpha_R - \alpha_S $
             \\ \hline
             
-            &
+             \newline
+            \tabbild[scale=0.4]{images/IndukdqSM.JPG}&
+            \newline
+            \textcolor{red}{wahre Induktivität} \newline
+            \textcolor{blue}{lineare Annäherung} \newline
             N = Windungszahl Statorstrang \newline
             $ A_z $ = Zahnfläche \newline
-            $ \delta_{d/q} $ = Höhe des Luftspalts
+            $ \delta_{d} = \delta_{q}$ = Höhe des Luftspalts
             \\ \hline            
             
-            \textbf{Drehmoment} \quad d-Achse Parallel\newline
+            d-Achse Parallel\newline
             \tabbild[scale=0.6]{images/StatordSM}&
             \[ L_d = 2N \frac{\varPhi_{md}}{I_1}
             =2N\frac{B_{\delta d}A_z}{I_1}
             =\mu_0 2N\frac{2NI_1A_z}{2\delta_d I_1}
             =\mu_0 2N^2\frac{A_z}{\delta_d} \]
             \\ \hline
-            
-            \textbf{Drehmoment} \quad q-Achse Parallel\newline
+                       
+            q-Achse Parallel\newline
             \tabbild[scale=0.6]{images/StatorqSM}&
             \[ L_d = 2N \frac{\varPhi_{mq}}{I_1}
             =2N\frac{B_{\delta q}A_z}{I_1}

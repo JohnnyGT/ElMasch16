@@ -80,4 +80,45 @@
         \[  \frac{sin(\delta)}{2\pi f L_d}=\frac{sin(\delta ')}{2\pi f L_d '} \] &
         \\ \hline       
     \end{tabular}
+    \clearpage
+    \pagebreak
 
+    \subsection{V11-12 S43}
+        \begin{longtable}{| p{.40\textwidth} | p{.60\textwidth} |}
+             \firsthline
+              \newline
+              \tabbild[scale=0.6]{images/StatordqSM1}&
+              $ \varPhi_m(y_r,i) = L(y_r(t)) \cdot i(t) $\newline
+              \[ u_{Statorkreis}(t)=R\cdot i(t) + \frac{d\varPhi_m}{dt}(t) = R \cdot i(t) + \frac{d}{dt}\left[L(y_r(t))\cdot i(t) \right]\] 
+              \[\qquad = R \cdot i(t) + \frac{dL}{d y_r} (y_r)\cdot \frac{d y_r}{dt} i(t) +L(y_r)\cdot \frac{di}{dt}(t)\]
+              \[ p_{Statorkreis}(t)=u(t) \cdot i(t) = R\cdot i^2(t)+\frac{dL}{dY_r}(y_r)\cdot \omega_r\cdot i^2(t)+L\cdot i(t)\cdot \frac{di}{dt}(t) \]
+              \\ \hline
+              
+              \textbf{Elektrische Leistung des Stators}&
+              \[ p(t) = R \cdot i^2(t) + \frac{dL}{dy_r}\cdot \omega_r \cdot i^2(t) + L \cdot i(t) \cdot\frac{di}{dt}(t) \]
+              \[=p_{Cu}(t)+\frac{dw_m}{dt}(t)+\frac{1}{2}\cdot \frac{dL}{dy_r}(y_r)\cdot \omega_r \cdot i^2(t) \]
+              \\ \hline
+              
+              \textbf{Zeitableitung magnetischer Energie}&
+              \[ w_m(t) = \frac{1}{2} \cdot L(y_r) \cdot i^2(t) \Rightarrow \frac{d}{dt} \left( \frac{1}{2} \cdot L(y_r) \cdot i^2(t) \right) \]
+              \[=\frac{1}{2}\cdot \frac{dL}{dy_r}(y_r)\cdot\omega_r \cdot i^2(t) + L \cdot i(t) \cdot \frac{di}{dt}(t) \]
+              \\ \hline
+              
+              \textbf{Rotorleistung}&
+              \[ p_\delta(t)= \frac{1}{2}\cdot \frac{dL}{dy_r}(y_r)\cdot \omega_r \cdot i^2(t) \]
+              \\ \hline
+              
+              \textbf{Motormoment}&
+              \[ m_M(t)=\frac{p_\delta}{\omega_r}(t)=\frac{1}{2}\cdot\frac{dL}{dy_r}(y_r)\cdot i^2(t) \]
+              \\ \hline
+              
+               \newline
+              \tabbild[scale=0.7]{images/IndukdqSMY}&
+               \newline
+              \tabbild[scale=0.7]{images/MomentdqSMY}
+              \\ \hline
+              
+              
+              
+              
+        \end{longtable}
