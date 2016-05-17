@@ -1,53 +1,53 @@
 \section{Schrittmotor}
-    \subsection{Merkmale}
+\subsection{Merkmale}
+    \begin{itemize}
+        \item Der Schrittwinkel hängt vom Aufbau der Maschine ab und kann zwischen 0.6° und 15° sein.
+        \item moderne Arten der Schrittmotoren
+        \item Drehmoment bis zu 5 Nm
+        \item Werden im unteren leistungsbereich eingesetzt
         \begin{itemize}
-            \item Der Schrittwinkel hängt vom Aufbau der Maschine ab und kann zwischen 0.6° und 15° sein.
-            \item moderne Arten der Schrittmotoren
-            \item Drehmoment bis zu 5 Nm
-            \item Werden im unteren leistungsbereich eingesetzt
-            \begin{itemize}
-                \item Reluktanz-SM
-                \item Hybrid-SM
-                \item Permanentmagnet-SM
-            \end{itemize}
+            \item Reluktanz-SM
+            \item Hybrid-SM
+            \item Permanentmagnet-SM
         \end{itemize}
-        \textcolor{green}{Vorteil}:
-        \begin{itemize}
-            \item hoher Wirkungsgrad
-            \item gute statische und dynamische Eigenschaften
-            \item Kostengünstig
-            \item praktisch nicht überlastbar
-        \end{itemize}
-    
-    \subsection{Reluktanz-SM}
-        \begin{longtable}{| p{.40\textwidth} | p{.60\textwidth} |}
-            \firsthline
-            \textbf{Aufbau} \newline
-            \tabbild[scale=0.5]{images/AufbauReluktanzSM.JPG} &	
-            \newline
-            Stator-Zähne: $ SZ_1, SZ_2, SZ_3, SZ_4$ \newline
-            Stator-Wicklung: $ SW_1, SW_2, SW_3, SW_4 $ \newline
-            Rotor-Zähne: $ RZ_1, RZ_2$
-            \\ \hline
-            
-            \textbf{Wirkungsprinzip} \newline
-            \tabbild[scale=0.45]{images/WirkPrinzReluktanzSM.JPG}&
-            \newline
-            Die magentische Reluktanzkraft ist immer anziehend \newline
-            $\Rightarrow$ veruscht den Luftspalt zu verkleinern.
-            \\ \hline
-            
-             \newline
-            \tabbild[scale=0.5]{images/FLWirkPrinzReluktanzSM.JPG}&
-            \newline
-            Die Spule $ SW_1 $ ,$ SW_3 $ sind an die Quelle angeschlossen. \newline
-            Das magnetische Feld der ersten zwei Spulen wird erzeugt. \newline
-            Die Reluktanzkraft wirkt auf den Rotor um die Lluftspalte zu verringern. \newline
-            Das mechanische Moment wird erzeugt.
-            %\\ \hline
-            
-            %TODO Passende Grafik einfügen ca S.24 Vorlesung Aktive Wicklungen beachten.
-            %Evt mit \multicolumn formatieren
+    \end{itemize}
+    \textcolor{green}{Vorteil}:
+    \begin{itemize}
+        \item hoher Wirkungsgrad
+        \item gute statische und dynamische Eigenschaften
+        \item Kostengünstig
+        \item praktisch nicht überlastbar
+    \end{itemize}
+
+\subsection{Reluktanz-SM}
+    \begin{longtable}{| p{.40\textwidth} | p{.60\textwidth} |}
+        \firsthline
+        \textbf{Aufbau} \newline
+        \tabbild[scale=0.5]{images/AufbauReluktanzSM.JPG} &	
+        \newline
+        Stator-Zähne: $ SZ_1, SZ_2, SZ_3, SZ_4$ \newline
+        Stator-Wicklung: $ SW_1, SW_2, SW_3, SW_4 $ \newline
+        Rotor-Zähne: $ RZ_1, RZ_2$
+        \\ \hline
+        
+        \textbf{Wirkungsprinzip} \newline
+        \tabbild[scale=0.45]{images/WirkPrinzReluktanzSM.JPG}&
+        \newline
+        Die magentische Reluktanzkraft ist immer anziehend \newline
+        $\Rightarrow$ veruscht den Luftspalt zu verkleinern.
+        \\ \hline
+        
+         \newline
+        \tabbild[scale=0.5]{images/FLWirkPrinzReluktanzSM.JPG}&
+        \newline
+        Die Spule $ SW_1 $ ,$ SW_3 $ sind an die Quelle angeschlossen. \newline
+        Das magnetische Feld der ersten zwei Spulen wird erzeugt. \newline
+        Die Reluktanzkraft wirkt auf den Rotor um die Lluftspalte zu verringern. \newline
+        Das mechanische Moment wird erzeugt.
+        %\\ \hline
+        
+        %TODO Passende Grafik einfügen ca S.24 Vorlesung Aktive Wicklungen beachten.
+        %Evt mit \multicolumn formatieren
 %            \tabbild[scale=0.35]{images/ReluktanzSM1.JPG}\vline
 %            \tabbild[scale=0.35]{images/ReluktanzSM2.JPG}&
 %            \tabbild[scale=0.35]{images/ReluktanzSM3.JPG}\vline
@@ -58,58 +58,58 @@
 %            \tabbild[scale=0.35]{images/ReluktanzSM21.JPG}&
 %            \tabbild[scale=0.35]{images/ReluktanzSM3.JPG}\vline
 %            \tabbild[scale=0.35]{images/ReluktanzSM41.JPG}
-            
-            \\ \lasthline
-        \end{longtable}
-    
-    \subsection{Permanentmagnet-SM}
-        \begin{longtable}{| p{.40\textwidth} | p{.60\textwidth} |}
-            \firsthline
-            \textbf{Aufbau} \newline
-            \tabbild[scale=0.5]{images/AufbauPMagnetSM.JPG} &	
-            \newline
-            Stator-Zähne: $ SZ_1, SZ_2, SZ_3, SZ_4$ \newline
-            Stator-Wicklung: $ SW_1, SW_2, SW_3, SW_4 $ \newline
-            Rotor-Zähne: $ RZ_1, RZ_2$ \newline \newline
-            \textbf{Grundgleichnung} \newline
-            Stator-Zahnzahl: $  MZ_s $ = 4 \newline
-            Rotor-Zahnzahl: $ Z_R $ = 2 \newline
-            Stator-Winkel: $ \alpha_S=\frac{2\pi}{Z_s}=90$\textdegree  \newline
-            Rotor-Winkel: $ \alpha_R=\frac{2\pi}{Z_R}=180$\textdegree \newline
-            Vollschritt-Winkel: $ \alpha_0 = \alpha_R - \alpha_S $
-            \\ \hline
-            
-             \newline
-            \tabbild[scale=0.4]{images/IndukdqSM.JPG}&
-            \newline
-            \textcolor{red}{wahre Induktivität} \newline
-            \textcolor{blue}{lineare Annäherung} \newline
-            N = Windungszahl Statorstrang \newline
-            $ A_z $ = Zahnfläche \newline
-            $ \delta_{d} = \delta_{q}$ = Höhe des Luftspalts
-            \\ \hline            
-            
-            d-Achse Parallel\newline
-            \tabbild[scale=0.6]{images/StatordSM}&
-            \[ L_d = 2N \frac{\varPhi_{md}}{I_1}
-            =2N\frac{B_{\delta d}A_z}{I_1}
-            =\mu_0 2N\frac{2NI_1A_z}{2\delta_d I_1}
-            =\mu_0 2N^2\frac{A_z}{\delta_d} \]
-            \\ \hline
-                       
-            q-Achse Parallel\newline
-            \tabbild[scale=0.6]{images/StatorqSM}&
-            \[ L_d = 2N \frac{\varPhi_{mq}}{I_1}
-            =2N\frac{B_{\delta q}A_z}{I_1}
-            =\mu_0 2N\frac{2NI_1A_z}{2\delta_q I_1}
-            =\mu_0 2N^2\frac{A_z}{\delta_q} \]
-            
-            \\ \lasthline
-        \end{longtable}
         
-        %TODO ab Folie 39
+        \\ \lasthline
+    \end{longtable}
 
+\subsection{Permanentmagnet-SM}
+    \begin{longtable}{| p{.40\textwidth} | p{.60\textwidth} |}
+        \firsthline
+        \textbf{Aufbau} \newline
+        \tabbild[scale=0.5]{images/AufbauPMagnetSM.JPG} &	
+        \newline
+        Stator-Zähne: $ SZ_1, SZ_2, SZ_3, SZ_4$ \newline
+        Stator-Wicklung: $ SW_1, SW_2, SW_3, SW_4 $ \newline
+        Rotor-Zähne: $ RZ_1, RZ_2$ \newline \newline
+        \textbf{Grundgleichnung} \newline
+        Stator-Zahnzahl: $  MZ_s $ = 4 \newline
+        Rotor-Zahnzahl: $ Z_R $ = 2 \newline
+        Stator-Winkel: $ \alpha_S=\frac{2\pi}{Z_s}=90$\textdegree  \newline
+        Rotor-Winkel: $ \alpha_R=\frac{2\pi}{Z_R}=180$\textdegree \newline
+        Vollschritt-Winkel: $ \alpha_0 = \alpha_R - \alpha_S $
+        \\ \hline
         
+         \newline
+        \tabbild[scale=0.4]{images/IndukdqSM.JPG}&
+        \newline
+        \textcolor{red}{wahre Induktivität} \newline
+        \textcolor{blue}{lineare Annäherung} \newline
+        N = Windungszahl Statorstrang \newline
+        $ A_z $ = Zahnfläche \newline
+        $ \delta_{d} = \delta_{q}$ = Höhe des Luftspalts
+        \\ \hline            
+        
+        d-Achse Parallel\newline
+        \tabbild[scale=0.6]{images/StatordSM}&
+        \[ L_d = 2N \frac{\varPhi_{md}}{I_1}
+        =2N\frac{B_{\delta d}A_z}{I_1}
+        =\mu_0 2N\frac{2NI_1A_z}{2\delta_d I_1}
+        =\mu_0 2N^2\frac{A_z}{\delta_d} \]
+        \\ \hline
+                   
+        q-Achse Parallel\newline
+        \tabbild[scale=0.6]{images/StatorqSM}&
+        \[ L_d = 2N \frac{\varPhi_{mq}}{I_1}
+        =2N\frac{B_{\delta q}A_z}{I_1}
+        =\mu_0 2N\frac{2NI_1A_z}{2\delta_q I_1}
+        =\mu_0 2N^2\frac{A_z}{\delta_q} \]
+        
+        \\ \lasthline
+    \end{longtable}
     
-   \clearpage
-   \pagebreak     
+    %TODO ab Folie 39
+
+    
+
+\clearpage
+\pagebreak     
