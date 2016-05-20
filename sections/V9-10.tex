@@ -81,13 +81,13 @@ Eigenschaften:
         \\ \hline 
         
         \textbf{Induzierter Strom des Läufers}&
-         \[ I_2 = \frac{U_{i20}}{\sqrt{R_2^2+X_{2\sigma}^2}} \]&
+         \[ I_2 = \frac{U_{i20}}{\sqrt{(R_2/s)^2+X_{2\sigma}^2}} \]&
          \\ \hline
         
         \textbf{Stillstand}\newline
          s = 1 \newline
         $ f_2 = f_1 $ &
-        \[ I_2 = I_{2max} = \frac{U_{i20}}{\sqrt{(R_2/2)^2+X_{2\sigma^2}}} \]&
+        \[ I_2 = I_{2max} = \frac{U_{i20}}{\sqrt{R_2^2+X_{2\sigma}^2}} \]&
          \newline
         \tabbild[scale=0.3]{images/FlussStillstand}       
         \\ \hline
@@ -132,10 +132,12 @@ Eigenschaften:
         \[ M=\frac{q_1}{2\pi n_1}\cdot \frac{U_1^2}{(R_2'/s)^2+X_{2\sigma}^2}\cdot\frac{R_2'}{s} \]
         \[ s_K=\frac{R_2'}{X_{2\sigma}'} \]
         \[ M_K= \frac{q_1}{4\pi n_1}\cdot\frac{U_1^2}{X'_{2\sigma}} \]&
+        $ q_1 $= Anz Phasen der Statorwiklung\newline
         \\ \hline
         
         \textbf{Klosssche Gleichung}&
-        \[ \frac{M}{M_K}=\frac{2}{\frac{s}{s_K}+\frac{s_K}{s}} \]&
+        \[ \frac{M}{M_K}=\frac{2}{\frac{s}{s_K}+\frac{s_K}{s}} \]
+        \[ \frac{1}{2} sk^2 - \frac{2 Mk}{M}sk+s=0 \]&
         \\ \hline        
               
     \end{longtable}
@@ -148,8 +150,8 @@ Eigenschaften:
     \begin{longtable}{| p{.55\textwidth} | p{.45\textwidth}|}
         \hline
         \textbf{Grundgleichungen:}\newline
-        \[ \underline{I_1}= \underline{I_{FE}}+\underline{I_\mu}+\underline{I'_2} \]
-        \[ \underline{U_1}= R_1 \cdot \underline{I_1}+jX_{\sigma 1}\cdot \underline{I_1}+ \underline{U_h} \]
+        \[ \underline{I_1}= \underline{I_{FE}}+\underline{I_\mu}+\underline{I'_2} \approx \underline{I'_2} \]
+        \[ \underline{U_1}= R_1 \cdot \underline{I_1}+jX_{\sigma 1}\cdot \underline{I_1}+ \underline{U_h} \approx \underline{U_h} \]
         \textbf{Übersetzungsverhältnis:}\newline
         \[ u=\frac{N_1 \cdot k_{w1}}{N_2 \cdot k_{w2}}\]
         \[ \underline{I'_2}=\underline{I_2 \cdot u} \]

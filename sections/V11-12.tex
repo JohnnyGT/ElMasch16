@@ -63,51 +63,126 @@
     \end{longtable}
 
 \subsection{Permanentmagnet-SM}
-    \begin{longtable}{| p{.40\textwidth} | p{.60\textwidth} |}
+    \begin{longtable}{| p{.35\textwidth} | p{.60\textwidth} |}
         \firsthline
         \textbf{Aufbau} \newline
         \tabbild[scale=0.5]{images/AufbauPMagnetSM.JPG} &	
         \newline
         Stator-Zähne: $ SZ_1, SZ_2, SZ_3, SZ_4$ \newline
         Stator-Wicklung: $ SW_1, SW_2, SW_3, SW_4 $ \newline
-        Rotor-Zähne: $ RZ_1, RZ_2$ \newline \newline
-        \textbf{Grundgleichnung} \newline
-        Stator-Zahnzahl: $  MZ_s $ = 4 \newline
-        Rotor-Zahnzahl: $ Z_R $ = 2 \newline
-        Stator-Winkel: $ \alpha_S=\frac{2\pi}{Z_s}=90$\textdegree  \newline
-        Rotor-Winkel: $ \alpha_R=\frac{2\pi}{Z_R}=180$\textdegree \newline
-        Vollschritt-Winkel: $ \alpha_0 = \alpha_R - \alpha_S $
+        Rotor-Zähne: $ RZ_1, RZ_2$ 
+        \\ \hline
+        
+        \textbf{Grundgleichnung} & %TODO Format 3-Spalten
+        Stator-Zahnzahl: $  MZ_s $  \newline
+        Rotor-Zahnzahl: $ Z_R $  \newline
+        Stator-Winkel: $ \alpha_S=\frac{2\pi}{Z_s}$ \quad [rad]  \newline
+        Rotor-Winkel: $ \alpha_R=\frac{2\pi}{Z_R}$ \quad [rad]  \newline
+        Vollschritt-Winkel: $ \alpha_0 = \alpha_R - \alpha_S $ \newline
+        Der Vollschrittwinkel berzeichnet die Bewegung des Rotors pro Einzel-Steuerimpuls. \newline
+        Strangzahl: $ m= \frac{Z_s}{Z_S - Z_R} $\newline
+        Schrittzahl: $ N_p = \frac{2\pi}{\alpha_0}  $\newline
+        Steuerfrequenz: $ f_s = N_p * n $\quad $ (n=[s^-1]) $
         \\ \hline
         
          \newline
         \tabbild[scale=0.4]{images/IndukdqSM.JPG}&
         \newline
         \textcolor{red}{wahre Induktivität} \newline
-        \textcolor{blue}{lineare Annäherung} \newline
+        \textcolor{blue}{lineare Annäherung} \newline \newline
         N = Windungszahl Statorstrang \newline
         $ A_z $ = Zahnfläche \newline
         $ \delta_{d} = \delta_{q}$ = Höhe des Luftspalts
         \\ \hline            
-        
+        %TODO w_zu ist die breite der Zahnüberlappung in q position??ubung 7 
         d-Achse Parallel\newline
         \tabbild[scale=0.6]{images/StatordSM}&
-        \[ L_d = 2N \frac{\varPhi_{md}}{I_1}
+        \[ L_d = \frac{\varPsi_{md}}{I_1}
+        =2N \frac{\varPhi_{md}}{I_1}
         =2N\frac{B_{\delta d}A_z}{I_1}
-        =\mu_0 2N\frac{2NI_1A_z}{2\delta_d I_1}
-        =\mu_0 2N^2\frac{A_z}{\delta_d} \]
+        =\mu_0 2N\frac{2NI_1A_z}{2\delta_d I_1} \]
+        \[\quad =\mu_0 2N^2\frac{A_z}{\delta_d} 
+         = \mu_0 2N^2\frac{L \cdot w_s}{\delta_d} \]
         \\ \hline
                    
         q-Achse Parallel\newline
         \tabbild[scale=0.6]{images/StatorqSM}&
-        \[ L_d = 2N \frac{\varPhi_{mq}}{I_1}
+        \[ L_q = \frac{\varPsi_{mq}}{I_1}
+        =2N \frac{\varPhi_{mq}}{I_1}
         =2N\frac{B_{\delta q}A_z}{I_1}
-        =\mu_0 2N\frac{2NI_1A_z}{2\delta_q I_1}
-        =\mu_0 2N^2\frac{A_z}{\delta_q} \]
+        =\mu_0 2N\frac{2NI_1A_z}{2\delta_q I_1}\]
+        \[\quad =\mu_0 2N^2\frac{A_z}{\delta_q} 
+        = \mu_0 2N^2\frac{L \cdot w_{zu}}{\delta_q} \]
         
         \\ \lasthline
     \end{longtable}
+\subsection{V11-12 S43}
+\begin{longtable}{| p{.40\textwidth} | p{.60\textwidth} |}
+    \firsthline
+    \newline
+    \tabbild[scale=0.6]{images/StatordqSM1}&
+    $ \varPhi_m(y_r,i) = L(y_r(t)) \cdot i(t) $\newline
+    \[ u_{Statorkreis}(t)=R\cdot i(t) + \frac{\diff\varPhi_m}{\diff t}(t) = R \cdot i(t) + \frac{\diff}{\diff t}\left[L(y_r(t))\cdot i(t) \right]\] 
+    \[\qquad = R \cdot i(t) + \frac{\diff L}{\diff  y_r} (y_r)\cdot \frac{\diff  y_r}{\diff t} i(t) +L(y_r)\cdot \frac{\diff i}{\diff t}(t)\]
+    \[ p_{Statorkreis}(t)=u(t) \cdot i(t) = R\cdot i^2(t)+\frac{\diff L}{\diff Y_r}(y_r)\cdot \omega_r\cdot i^2(t)+L\cdot i(t)\cdot \frac{\diff i}{\diff t}(t) \]
+    \\ \hline
     
-    %TODO ab Folie 39
+    \textbf{Elektrische Leistung des Stators}&
+    \[ p(t) = R \cdot i^2(t) + \frac{\diff L}{\diff y_r}\cdot \omega_r \cdot i^2(t) + L \cdot i(t) \cdot\frac{\diff i}{\diff t}(t) \]
+    \[=p_{Cu}(t)+\frac{\diff w_m}{\diff t}(t)+\frac{1}{2}\cdot \frac{\diff L}{\diff y_r}(y_r)\cdot \omega_r \cdot i^2(t) \]
+    \\ \hline
+    
+    \textbf{Zeitableitung magnetischer Energie}&
+    \[ w_m(t) = \frac{1}{2} \cdot L(y_r) \cdot i^2(t) \Rightarrow \frac{\diff }{\diff t} \left( \frac{1}{2} \cdot L(y_r) \cdot i^2(t) \right) \]
+    \[=\frac{1}{2}\cdot \frac{\diff L}{\diff y_r}(y_r)\cdot\omega_r \cdot i^2(t) + L \cdot i(t) \cdot \frac{\diff i}{\diff t}(t) \]
+    \\ \hline
+    
+    \textbf{Rotorleistung}&
+    \[ p_\delta(t)= \frac{1}{2}\cdot \frac{\diff L}{\diff y_r}(y_r)\cdot \omega_r \cdot i^2(t) \]
+    \\ \hline
+    
+    \textbf{Motormoment}&
+    \[ m_M(t)=\frac{p_\delta}{\omega_r}(t)=\frac{1}{2}\cdot\frac{\diff L}{\diff y_r}(y_r)\cdot i^2(t) \]
+    \\ \hline
+    
+    \textbf{Mototrmoment Linerar}&
+    \[ M_M = \frac{1}{2}\frac{L_d - L_q}{\alpha_0}I_1^2 \]
+    \\ \hline
+    
+    \newline
+    \tabbild[scale=0.7]{images/IndukdqSMY}&
+    \newline
+    \tabbild[scale=0.7]{images/MomentdqSMY}
+    \\ \hline
+    
+    \textbf{Betriebsverhalten}\newline
+    \[ J_g \frac{\diff \omega_r}{\diff t}= J_g \frac{\omega_s - \omega_1}{T_s} = M_M - M_L \] \newline
+    $ \omega_s = 2\pi\frac{n_s}{60}=2\pi\frac{f_s}{N_p}=\alpha_0 f_s $&
+    $ J_g $ = Motorbezogenes Trägheitsmoment \newline
+    $ M_M $ = Motorbezogenes Drehmoment \newline
+    $ M_L $ = Lastmoment \newline
+    $ \omega_s $ = Kreisgeschwindigkeit Statorfeld \newline
+    $ \omega_1 $ = Kreisgeschwindigkeit des Rotors \newline
+    $\Rightarrow  \omega_1 = 0 \Rightarrow$ Motor im Stillstand \newline
+    \\ \hline
+    
+    \textbf{Lastmoment} \newline
+    \[ M_L(f_s,\omega_1) = M_M -J_g\frac{\omega_s}{T_s}+J_g\frac{\omega_1}{T_s}\]
+    \[=M_m -J_g\alpha_0f_s^2+J_g\omega_1f_s \]
+    \[ f_{AG}=\sqrt{\frac{M_M}{J_R \cdot \alpha_0}} \]&
+    \newline
+    $ F_s = \frac{1}{T_s} $ = Schaltfrequenz\newline
+    $ \omega_1 $ = Anfangsgeschwindigkeit \newline
+    \\ \hline
+    
+    \textbf{Anlaufkennlinie}\newline
+    \tabbild[scale=0.4]{images/AnlaufkennlinieSM.JPG}&
+    $ f_{AG} $ = Anlaufgrenzfrequenz \newline
+    $ f_{BG} $ =  Betriebsgrenzfrequenz
+    \\ \hline
+    
+\end{longtable}
+
 
     
 
