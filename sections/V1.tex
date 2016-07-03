@@ -1,25 +1,26 @@
 \section{Grundlagen}
 \subsection{Wichtige Formeln}
+    \renewcommand{\arraystretch}{2.5}
     \begin{longtable}{| p{.25\textwidth} | p{.40\textwidth} | p{.30\textwidth} |}
         \firsthline
         \textbf{Elektrische Kraft} \newline
-        \tabbild[width=3.5cm]{images/ElKraft.png}  &
+        \tabbild[width=3.5cm]{images/ElKraft.png} \newline {\tiny Die Kraftwirkung des geladenen Körpers (Q) auf eine elektrische Probeladung (q)}&
         \begin{equation*}\vec{F_e} = \dfrac{1}{2\pi\epsilon}\cdot\dfrac{Q\cdot q}{r}\cdot\vec{r_0}\end{equation*}
         \begin{equation*}F_e = \dfrac{\pi\cdot U^2}{2\cdot r\cdot(\ln{\dfrac{r-R_1}{R_1}})^2}\end{equation*} & \newline
         [${F_e}$] = $\dfrac{N}{m}$\newline \newline 
-        $\epsilon\;\widehat{=}\;$elektrische Permittivität\newline 
+        $\epsilon\,\widehat{=}\,${\small dielektrische Permittivität}\newline 
         $\epsilon_0 = 8.8542 \cdot 10^{-12}$ $\left[\dfrac{As}{Vm}\right]$ \newline \newline
-        Q,q$\,\widehat{=}\,$Linienladungsdichte$\,\left[\dfrac{C}{m}\right]$ 
+        Q, q$\,\widehat{=}\,$Linienladungsdichte$\,\left[\dfrac{C}{m}\right]$ 
         \\ \hline
         
         \textbf{Magnetische Kraft} \newline
-        \tabbild[width=3.5cm]{images/magnetischeKraft.png}  &	
-        \begin{equation*}\vec{F_m} = \dfrac{\mu}{2\pi}\cdot\dfrac{I\cdot i}{r}\cdot\vec{r_0}\end{equation*} 
+        \tabbild[width=3.5cm]{images/magnetischeKraft.png}   &	
+        \begin{equation*}\vec{F_m} = \dfrac{\mu}{2\pi}\cdot\dfrac{I\cdot i}{r}\cdot\vec{r_0} = \mu\cdot i\cdot \vec{l_0}\times\vec{H}\end{equation*} 
         \begin{equation*}F_m = \dfrac{\mu_0\cdot I^2}{2\cdot\pi\cdot r}\end{equation*} 
         \includegraphics[width=3cm]{images/vektorprodukt.png}	& \newline
         $\mu$ $\widehat{=}$ magnetische Permeabilität\newline 
         $\mu_0$ = $4\pi\cdot 10^{-7} \,\left[\dfrac{N}{A^2}\right]=\left[\dfrac{Vs}{Am}\right]$ \newline \newline
-        $\vec{r_0}=\dfrac{\vec{r}}{|\vec{r}|}$ \newline \newline 
+        $\vec{r_0}=\dfrac{\vec{r}}{|\vec{r}|}\,\widehat{=}$ Einheitsvektor \newline \newline 
         I, i $\widehat{=}$ elektrische Ströme 	\newline \newline 
         $[F_m]$ = $\dfrac{N}{m}$
         \\ \hline
@@ -32,8 +33,8 @@
         \\ \hline
         
         \textbf{Elektrisches Potential}  &
-        \begin{equation*}\varphi = \int\vec{E}\cdot\vec{dl}	\end{equation*}	& 
-        \begin{equation*}[\varphi] = V\end{equation*} 
+        \begin{equation*}\varphi_A = \int_{A}^{Bezugspunkt}\vec{E}\cdot\vec{dl}	\end{equation*}	& 
+        \begin{equation*}[\varphi_A] = V\end{equation*} 
         \\ \hline
         
         \textbf{Elektrische Spannung}   &
@@ -42,20 +43,22 @@
         \\ \hline
               
         \textbf{Elektrischer Strom} 	    &  
-        \begin{equation*}I = \dfrac{dQ}{dt}	\end{equation*} &  
+        \begin{equation*}I = \dfrac{dQ}{dt} = \dot{Q}	\end{equation*} &  
         \begin{equation*}[I] = A\end{equation*} 
         \\ \hline
         		
         \textbf{Magnetische Feldstärke} \newline \newline
         \tabbild[width=4cm]{images/magnetischesFeld.png} &
-        \begin{equation*}\vec{H} = \dfrac{I}{2\pi}\cdot\dfrac{\vec{L_0}\times\vec{r_0}}{r} \end{equation*} & 
-        \newline [H] = $\dfrac{A}{m}$ \newline
+        \begin{equation*}\vec{H} = \dfrac{I}{2\pi}\cdot\dfrac{\vec{L_0}\times\vec{r_0}}{r} \end{equation*}  \tabbild[width=4cm]{images/MagnetischeFeldstaerke} & 
+        \newline [H] = $\dfrac{A}{m}$ \newline \newline
         $\vec{L_0},\vec{l_0}$ $\widehat{=}$ Einheitsvektoren der Stromleiter
+		\newline \newline
+        $\vec{r_0}=\dfrac{\vec{r}}{|\vec{r}|}\,\widehat{=}$ Einheitsvektor
         \\ \hline
         
         \textbf{Magnetische Flussdichte}  &
         \begin{equation*}\vec{B} = \mu\cdot\vec{H} = \mu_0\cdot\mu_r\cdot\vec{H}\end{equation*} &  
-        \begin{equation*}[B] = T=\dfrac{Vs}{m^2}\end{equation*} 
+        \begin{equation*}[B] = T=\dfrac{Vs}{m^2}\end{equation*} \[ \mu_0$ = $4\pi\cdot 10^{-7} \,\left[\dfrac{N}{A^2}\right]=\left[\dfrac{Vs}{Am}\right]\]
         \\ \hline
         
         \textbf{Magnetische Fluss} \newline
@@ -88,7 +91,7 @@
         \\ \hline
         
         \textbf{Magnetische Spannung}	 & 
-        \begin{equation*}V_m = \int\limits_{A}^{B}\vec{H}\cdot\vec{dl}\end{equation*}											
+        \begin{equation*}V_m = \int\limits_{A}^{B}\vec{H}\cdot\vec{dl} \approx H_{Luft}\cdot l_{Luft} = V_{mLuft} \end{equation*}											
         & \begin{equation*}[V_m] = A\end{equation*} 
         \\ \hline 
         
@@ -98,21 +101,26 @@
         \begin{equation*}\Rightarrow H = \dfrac{N\cdot I}{L}\end{equation*} 
         \begin{equation*}\Rightarrow B = \mu_0\cdot\dfrac{N\cdot I}{L}\end{equation*} &    
         falls L $>>$ R und \newline 
-        das Feld in der Spule \textbf{homogen} ist
+        das Feld in der Spule \textbf{homogen} ist \newline \newline \textcolor{red}{\danger \, L ist hier die Länge!}
         \\ \hline
         
         \textbf{Reluktanzkraft} \newline
         \tabbild[width=3.5cm]{images/reluktanzkraft.png} &
         \begin{equation*}F_R = -\dfrac{\partial W_m}{\partial\delta} = \mu_0\cdot\dfrac{N^2\cdot I^2\cdot A_{Fe}}{4\cdot\delta^2}\end{equation*} & 
-        wobei $A_{Fe}$ die magnetisch wirksame Fläche des Luftspalts ist. 
+        wobei $A_{Fe}$ die magnetisch \newline wirksame Fläche des Luftspalts ist. 
         \\ \hline
-        \textbf{magnetische Energie} & 
+        \textbf{Magnetische Energie} & 
         $W_m = \dfrac{1}{2}\cdot H_\delta\cdot B_\delta\cdot2\cdot A_{Fe}\cdot\delta = \mu_0\cdot \dfrac{I^2\cdot N^2}{4\cdot\delta}\cdot A_{Fe}$
         & wobei $A_{Fe}\cdot\delta$ dem Volumen des Luftspalts entspricht. \\
         \hline
+		\textbf{Magnetischer Widerstand} \newline \tabbild[width=4cm]{images/MagnetischeWiderstand} & 
+\[ R_m = \dfrac{V_m}{\phi}\] \newline wenn $\vec{A} \perp \vec{\phi} :$ \newline 
+\[R_m = \dfrac{H_0\cdot l}{B_0\cdot A} = \dfrac{l}{\mu_0\cdot A}\] & 
+\[[R_m] = \dfrac{A}{Vs} \] \\
+		\hline
         \textbf{Elektrische Kraft vs.} & \begin{equation*}
         F_e\, = \dfrac{\pi\cdot\epsilon_0\cdot U^2}{2\cdot r\cdot\left(ln\dfrac{r-R_1}{R_1}\right)^2} = 2.88\cdot 10^{-11} \quad \left[\dfrac{N}{m}\right]
-        \end{equation*} & Die magnetische Kraft pro Länge \& Strom ist $7 \cdot 10^4$ grösser als die Elektrische Kraft. Daher basieren alle elektrischen Maschinen auf der Magnetische Kraft. \\
+        \end{equation*} & Die magnetische Kraft pro \newline Länge \& Strom ist $7 \cdot 10^4$ grösser als die elektrische Kraft. Daher \newline basieren alle elektrischen Maschinen auf der magnetischen Kraft. \\
         \textbf{Magnetische Kraft}&\begin{equation*}
         F_m = \dfrac{\mu_0\cdot I^2}{2\cdot\pi\cdot r} = 2.00 \cdot 10^{-6} \quad\left[\dfrac{N}{m}\right]
         \end{equation*}&\\    

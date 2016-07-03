@@ -1,11 +1,20 @@
 \section{Synchronmaschine}
-
-\textcolor{green}{Vorteil}:
+    \renewcommand{\arraystretch}{2.5}
+{\scriptsize \textcolor{green}{Vorteil}:
 \begin{itemize} 
-    \item Hoher Wirkungsgrad
+	\item sehr robust, elektrodynamisch, mechanisch und thermisch stabil
+    \item Hoher Wirkungsgrad (80-90\%)
+	\item Drehmoment einfach bestimmbar
+	\item Einfache Konstruktion
 	\item Man kann Blindleistung mit diesem Motor kompensieren
 \end{itemize}
-
+\textcolor{red}{Nachteil}:
+\begin{itemize}
+\item Anlaufstrom
+\end{itemize}}
+\subsection{Funktionsweise}
+Das Drehfeld und der Rotor einer Synchronmaschine rotieren mit derselben Geschwindigkeit d.h. sind sie im Synchronlauf. \\
+\textbf{Anwendung:} zur Umwandlung von mechanischer Energie in elektrische Energie.
 \subsection{Aufbau und Wirkungsprinzip}
     \begin{minipage}[b]{0.5\linewidth}
     	\includegraphics[width = 5cm]{images/Schenkelpolmaschine}
@@ -61,7 +70,7 @@
         $\underline{U_d} = jX_d\cdot \underline{I_1}$ &
         \\ \hline
         
-        \textbf{Polradspannung} &
+        \textbf{Polradspannung} \newline (fiktive Hilfsgrösse) &
         $\underline{U_P} = \underline{U_P}\left(I_e\right)$ \newline\newline
         $\underline{U_P} = jX_h\cdot I_{e}\,'$  &
         $I_e \, \widehat{=}$ dem Erregerstrom \newline
@@ -87,10 +96,13 @@
         $P(\delta) = P_{mech}-P_V = \omega\cdot M - P_V$ \newline \newline
         \textbf{Motorbetrieb:} $\delta > 0$ \newline
         $P(\delta) = P_{mech} + P_V = \omega\cdot M + P_V$ &
-        $\delta =  \measuredangle (U_p, U_1)$ \newline \newline
+        Polradwinkel $\delta =  \measuredangle (U_p, U_1)$  \newline \newline
         $U_P$ ist die Polradspannung, sie entspricht einer fiktiven Grösse! Sie kann wiederum durch ein Zeigerdiagramm bestimmt werden.
         \\ \hline
-    \end{tabular}
+		\textbf{Erreger-Regulierkennlinien} & 
+		$ \dfrac{I_e}{I_{e0}} = \sqrt{cos^2(\varphi) + \left(x\cdot\dfrac{I_1}{I_N}-sin(\varphi)\right)^2}$ & $I_e = f(I_1)$ \newline $cos(\varphi)$ gegeben \newline $I_1$ - gewünschter Netzstrom \newline Bezugswert $x = \dfrac{X_d}{X_N}$
+		\\ \hline
+	    \end{tabular}
     \clearpage
     \newpage
     
@@ -105,5 +117,7 @@
     \includegraphics[width = 12 cm]{images/ZeigerdiagrammGeneratorbetrieb} \newline \newline
     \includegraphics[scale = 0.4]{images/Stabilitaet}
 
-%TODO Leistung
-%TODO Erreger-Regulierungskennlinien
+
+
+\clearpage
+\pagebreak

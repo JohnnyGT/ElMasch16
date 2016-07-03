@@ -4,18 +4,16 @@
         \item Der Schrittwinkel hängt vom Aufbau der Maschine ab und kann zwischen 0.6° und 15° sein.
         \item moderne Arten der Schrittmotoren
         \item Drehmoment bis zu 5 Nm
-        \item Werden im unteren leistungsbereich eingesetzt
+        \item Werden im unteren Leistungsbereich eingesetzt
         \begin{itemize}
             \item Reluktanz-SM
             \item Hybrid-SM
-            \item Permanentmagnet-SM
+            \item Permanentmagnet-SM (werden am häufigsten verwendet, da hoher Wirkungsgrad und gute statischen und dynamischen Eigenschaften)
         \end{itemize}
     \end{itemize}
     \textcolor{green}{Vorteil}:
     \begin{itemize}
-        \item hoher Wirkungsgrad
-        \item gute statische und dynamische Eigenschaften
-        \item Kostengünstig
+        \item kostengünstig
         \item praktisch nicht überlastbar
     \end{itemize}
 
@@ -23,27 +21,29 @@
     \begin{longtable}{| p{.40\textwidth} | p{.60\textwidth} |}
         \firsthline
         \textbf{Aufbau} \newline
-        \tabbild[scale=0.5]{images/AufbauReluktanzSM.JPG} &	
+        \tabbild[scale=0.5]{images/AufbauReluktanzSM} &	
         \newline
         Stator-Zähne: $ SZ_1, SZ_2, SZ_3, SZ_4$ \newline
-        Stator-Wicklung: $ SW_1, SW_2, SW_3, SW_4 $ \newline
+        Stator-Wicklungen: $ SW_1, SW_2, SW_3, SW_4 $ \newline
         Rotor-Zähne: $ RZ_1, RZ_2$
         \\ \hline
         
         \textbf{Wirkungsprinzip} \newline
-        \tabbild[scale=0.45]{images/WirkPrinzReluktanzSM.JPG}&
+        \tabbild[scale=0.6]{images/WirkPrinzReluktanzSM.JPG}&
         \newline
-        Die magentische Reluktanzkraft ist immer anziehend \newline
-        $\Rightarrow$ veruscht den Luftspalt zu verkleinern.
+        Die magnetische Reluktanzkraft ist immer anziehend \newline
+        $\Rightarrow$ versucht den Luftspalt zu verkleinern.
         \\ \hline
         
          \newline
         \tabbild[scale=0.5]{images/FLWirkPrinzReluktanzSM.JPG}&
         \newline
-        Die Spule $ SW_1 $ ,$ SW_3 $ sind an die Quelle angeschlossen. \newline
-        Das magnetische Feld der ersten zwei Spulen wird erzeugt. \newline
-        Die Reluktanzkraft wirkt auf den Rotor um die Lluftspalte zu verringern. \newline
-        Das mechanische Moment wird erzeugt.
+        \begin{enumerate}
+	   \item Die Spule $ SW_1 $ ,$ SW_3 $ sind an die Quelle angeschlossen. 
+       \item Das magnetische Feld der ersten zwei Spulen wird erzeugt.
+       \item Die Reluktanzkraft wirkt auf den Rotor um die Luftspalte zu verringern.
+       \item  Das mechanische Moment wird erzeugt.
+\end{enumerate}
         %\\ \hline
         
         %TODO Passende Grafik einfügen ca S.24 Vorlesung Aktive Wicklungen beachten.
@@ -64,25 +64,25 @@
 
 \subsection{Permanentmagnet-SM}
     \begin{longtable}{| p{.35\textwidth} | p{.60\textwidth} |}
-        \firsthline
+        \hline
         \textbf{Aufbau} \newline
         \tabbild[scale=0.5]{images/AufbauPMagnetSM.JPG} &	
         \newline
         Stator-Zähne: $ SZ_1, SZ_2, SZ_3, SZ_4$ \newline
-        Stator-Wicklung: $ SW_1, SW_2, SW_3, SW_4 $ \newline
-        Rotor-Zähne: $ RZ_1, RZ_2$ 
+        Stator-Wicklungen: $ SW_1, SW_2, SW_3, SW_4 $ \newline
+        Rotor-Zähne: $ RZ_1, RZ_2$ \newline \tabbild[scale=0.5]{images/Magnet}
         \\ \hline
         
-        \textbf{Grundgleichnung} & %TODO Format 3-Spalten
-        Stator-Zahnzahl: $  MZ_s $  \newline
+        \textbf{Grundgleichungen} & %TODO Format 3-Spalten
+        Stator-Zahnzahl: $  Z_s $  \newline
         Rotor-Zahnzahl: $ Z_R $  \newline
         Stator-Winkel: $ \alpha_S=\frac{2\pi}{Z_s}$ \quad [rad]  \newline
         Rotor-Winkel: $ \alpha_R=\frac{2\pi}{Z_R}$ \quad [rad]  \newline
         Vollschritt-Winkel: $ \alpha_0 = \alpha_R - \alpha_S $ \newline
-        Der Vollschrittwinkel berzeichnet die Bewegung des Rotors pro Einzel-Steuerimpuls. \newline
+        Der Vollschrittwinkel bezeichnet die Bewegung des Rotors pro Einzel-Steuerimpuls. \newline
         Strangzahl: $ m= \frac{Z_s}{Z_S - Z_R} $\newline
         Schrittzahl: $ N_p = \frac{2\pi}{\alpha_0}  $\newline
-        Steuerfrequenz: $ f_s = N_p * n $\quad $ (n=[s^-1]) $
+        Steuerfrequenz: $ f_s = N_p \cdot n $\quad $ \left(n=\left[\dfrac{1}{s}\right]\right) $\newline
         \\ \hline
         
          \newline
@@ -95,7 +95,8 @@
         $ \delta_{d} = \delta_{q}$ = Höhe des Luftspalts
         \\ \hline            
         %TODO w_zu ist die breite der Zahnüberlappung in q position??ubung 7 
-        d-Achse Parallel\newline
+        \textbf{Statorinduktivität}\newline
+		d-Achse Parallel\newline
         \tabbild[scale=0.6]{images/StatordSM}&
         \[ L_d = \frac{\varPsi_{md}}{I_1}
         =2N \frac{\varPhi_{md}}{I_1}
@@ -103,7 +104,7 @@
         =\mu_0 2N\frac{2NI_1A_z}{2\delta_d I_1} \]
         \[\quad =\mu_0 2N^2\frac{A_z}{\delta_d} 
          = \mu_0 2N^2\frac{L \cdot w_s}{\delta_d} \]
-        \\ \hline
+        \\ 
                    
         q-Achse Parallel\newline
         \tabbild[scale=0.6]{images/StatorqSM}&
@@ -114,38 +115,42 @@
         \[\quad =\mu_0 2N^2\frac{A_z}{\delta_q} 
         = \mu_0 2N^2\frac{L \cdot w_{zu}}{\delta_q} \]
         
-        \\ \lasthline
+        \\ \hline
     \end{longtable}
+    \clearpage
+    \pagebreak
+    
 \subsection{V11-12 S43}
 \begin{longtable}{| p{.35\textwidth} | p{.60\textwidth} |}
     \firsthline
+	\textbf{Drehmoment Herleitung}
     \newline
     \tabbild[scale=0.6]{images/StatordqSM1}&
-    $ \varPhi_m(y_r,i) = L(y_r(t)) \cdot i(t) $\newline
-    \[ u_{Statorkreis}(t)=R\cdot i(t) + \frac{\diff\varPhi_m}{\diff t}(t) = R \cdot i(t) + \frac{\diff}{\diff t}\left[L(y_r(t))\cdot i(t) \right]\] 
-    \[\qquad = R \cdot i(t) + \frac{\diff L}{\diff  y_r} (y_r)\cdot \frac{\diff  y_r}{\diff t} i(t) +L(y_r)\cdot \frac{\diff i}{\diff t}(t)\]
-    \[ p_{Statorkreis}(t)=u(t) \cdot i(t) = R\cdot i^2(t)+\frac{\diff L}{\diff Y_r}(y_r)\cdot \omega_r\cdot i^2(t)+L\cdot i(t)\cdot \frac{\diff i}{\diff t}(t) \]
+    $ \varPhi_m(\gamma_r,i) = L(\gamma_r(t)) \cdot i(t) $\newline
+    \[ u_{Statorkreis}(t)=R\cdot i(t) + \frac{\diff\varPhi_m}{\diff t}(t) = R \cdot i(t) + \frac{\diff}{\diff t}\left[L(\gamma_r(t))\cdot i(t) \right]\] 
+    \[\qquad = R \cdot i(t) + \frac{\diff L}{\diff  \gamma_r} (\gamma_r)\cdot \frac{\diff  \gamma_r}{\diff t} i(t) +L(\gamma_r)\cdot \frac{\diff i}{\diff t}(t)\]
+    \[ p_{Statorkreis}(t)=u(t) \cdot i(t) = R\cdot i^2(t)+\frac{\diff L}{\diff Y_r}(\gamma_r)\cdot \omega_r\cdot i^2(t)+L\cdot i(t)\cdot \frac{\diff i}{\diff t}(t) \]
     \\ \hline
     
     \textbf{Elektrische Leistung des Stators}&
-    \[ p(t) = R \cdot i^2(t) + \frac{\diff L}{\diff y_r}\cdot \omega_r \cdot i^2(t) + L \cdot i(t) \cdot\frac{\diff i}{\diff t}(t) \]
-    \[=p_{Cu}(t)+\frac{\diff w_m}{\diff t}(t)+\frac{1}{2}\cdot \frac{\diff L}{\diff y_r}(y_r)\cdot \omega_r \cdot i^2(t) \]
+    \[ p(t) = R \cdot i^2(t) + \frac{\diff L}{\diff \gamma_r}\cdot \omega_r \cdot i^2(t) + L \cdot i(t) \cdot\frac{\diff i}{\diff t}(t) \]
+    \[=p_{Cu}(t)+\frac{\diff w_m}{\diff t}(t)+\frac{1}{2}\cdot \frac{\diff L}{\diff \gamma_r}(\gamma_r)\cdot \omega_r \cdot i^2(t) \]
     \\ \hline
     
     \textbf{Zeitableitung magnetischer Energie}&
-    \[ w_m(t) = \frac{1}{2} \cdot L(y_r) \cdot i^2(t) \Rightarrow \frac{\diff }{\diff t} \left( \frac{1}{2} \cdot L(y_r) \cdot i^2(t) \right) \]
-    \[=\frac{1}{2}\cdot \frac{\diff L}{\diff y_r}(y_r)\cdot\omega_r \cdot i^2(t) + L \cdot i(t) \cdot \frac{\diff i}{\diff t}(t) \]
+    \[ w_m(t) = \frac{1}{2} \cdot L(\gamma_r) \cdot i^2(t) \Rightarrow \frac{\diff }{\diff t} \left( \frac{1}{2} \cdot L(\gamma_r) \cdot i^2(t) \right) \]
+    \[=\frac{1}{2}\cdot \frac{\diff L}{\diff \gamma_r}(\gamma_r)\cdot\omega_r \cdot i^2(t) + L \cdot i(t) \cdot \frac{\diff i}{\diff t}(t) \]
     \\ \hline
     
     \textbf{Rotorleistung}&
-    \[ p_\delta(t)= \frac{1}{2}\cdot \frac{\diff L}{\diff y_r}(y_r)\cdot \omega_r \cdot i^2(t) \]
+    \[ p_\delta(t)= \frac{1}{2}\cdot \frac{\diff L}{\diff \gamma_r}(\gamma_r)\cdot \omega_r \cdot i^2(t) \]
     \\ \hline
     
     \textbf{Motormoment}&
-    \[ m_M(t)=\frac{p_\delta}{\omega_r}(t)=\frac{1}{2}\cdot\frac{\diff L}{\diff y_r}(y_r)\cdot i^2(t) \]
+    \[ m_M(t)=\frac{p_\delta}{\omega_r}(t)=\frac{1}{2}\cdot\frac{\diff L}{\diff \gamma_r}(\gamma_r)\cdot i^2(t) \]
     \\ \hline
     
-    \textbf{Mototrmoment Linerar}&
+    \textbf{Motormoment (lineare Annäherung)}&
     \[ M_M = \frac{1}{2}\frac{L_d - L_q}{\alpha_0}I_1^2 \]
     \\ \hline
     
@@ -181,10 +186,7 @@
     $ f_{BG} $ =  Betriebsgrenzfrequenz
     \\ \hline
     
-\end{longtable}
-
-
-    
+\end{longtable}   
 
 \clearpage
-\pagebreak     
+\pagebreak

@@ -4,7 +4,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}	%ä,ü...
 % Seitenränder
-\usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm,includeheadfoot]{geometry}
+\usepackage[left=1cm,right=1cm,top=0.5cm,bottom=0.5cm,includeheadfoot]{geometry}
 % Sprachpaket
 \usepackage[english, ngerman]{babel} % Silbentrennung und Rechtschreibung Englisch und Deutsch
 
@@ -26,7 +26,7 @@
 \usepackage{longtable}              % Longtable erlaubt es Tabellen zu erstellen die bei der nächsten Seite weiterlaufen. (Bricht automatisch um)									
 \usepackage{mathabx}                % Mathesymbole									
 \usepackage{mathrsfs}               % \mathscr (Benötigt für Fourierreihen-Symbol)									
-\usepackage{mathtools}              % Extension package to amsmath									
+%\usepackage{mathtools}              % Extension package to amsmath									
 \usepackage{multicol}               % multicols-Umgebung \begin{multicols}{3} erzeugt Abschnitt mit 3 Spalten									
 \usepackage{multirow}               % Tabelle: ermöglicht es Felder mehrerer Zeilen in einem zusammenzufassen									
 \usepackage{pdflscape}              % adds PDF support to the environment 'landscape'									
@@ -214,4 +214,10 @@
     }
 }
 \makeatother
+
+%% Achtung Symbol \danger
+
+\newcommand*{\TakeFourierOrnament}[1]{{%
+\fontencoding{U}\fontfamily{futs}\selectfont\char#1}}
+\newcommand*{\danger}{\TakeFourierOrnament{66}}
 

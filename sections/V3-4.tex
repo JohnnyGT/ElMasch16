@@ -1,4 +1,5 @@
 \section{GSM - Gleichstrommotoren}
+%TODO Vor- und Nachteile Ergänzen + Anwendungsgebiet
 
 \vspace{-0.5cm}
 \begin{minipage}[b]{0.45\textwidth}
@@ -17,38 +18,43 @@
    	\vspace{0.2cm}
 \end{minipage}
 \vspace{-1cm}
-
+\subsection{Grenzwerte und Arbeitsbereiche}
+\begin{tabular}{| p{.40\textwidth} | p{.40\textwidth}|}
+\hline
+\vspace{-20pt}\tabbild[scale=0.4]{images/Arbeitsbereiche} & \[P = \omega\cdot M = 2\pi\cdot n\cdot M\] \newline \[M(n) = \dfrac{P_{max}}{2\pi}\cdot\dfrac{1}{n}\] \\
+\hline
+\end{tabular}
+\clearpage
+\pagebreak
 \subsection{Fremderregte GSM}
-\vspace{-0.2cm}
 \begin{minipage}[b]{0.5\textwidth}
    	\raggedright
-   	\includegraphics[width=6cm]{images/Ersatzschaltbild_GSM.png}
+   	\includegraphics[width=5cm]{images/Ersatzschaltbild_GSM.png}
 \end{minipage}
 \begin{minipage}[b]{0.5\textwidth}
    	\raggedright
    	\includegraphics[scale = 0.7]{images/KennlinieFremderregt}
-\end{minipage}\\
-
+\end{minipage}
 \begin{longtable}{| p{.25\textwidth} | p{.40\textwidth} | p{.30\textwidth} |}
-    \firsthline
+    \hline
     \textbf{Erregerwicklung}	&
     $U_e = R_e\cdot I_e + L_e\cdot\dfrac{dI_e}{dt}$ &
     Spannungsgleichung des Statorkreises
     \\ \hline
-    
     \textbf{Ankerwicklung}	&
     \[ U_a = R_a \cdot I_a + L_a \cdot \dfrac{dI_a}{dt} + E \] &
     $E = \omega\cdot\psi$
-    \qquad $\psi = L_e\cdot I_e \, \widehat{=}$ Erregerfluss \newline \newline
+    \newline $\psi = L_e\cdot I_e \, \widehat{=}$ Erregerfluss \newline
     $\omega = 2\pi\cdot n$ \newline
-    \quad n $\widehat{=}$ Drehzahl des Läufers $\left[\dfrac{1}{s}\right]$\newline \newline Spannungsgleichung des Rotorkreises
+    \quad n $\widehat{=}$ Drehzahl des Läufers $\left[\dfrac{1}{s}\right]$\newline Spannungsgleichung des \newline Rotorkreises
     \\ \hline
     
-    \textbf{Elektrische Leistung} & %TODO subklammern
-    Im stationären Betrieb: \quad $\left(\dfrac{d}{dt} = 0\right)$ \newline \newline
+    \textbf{Elektrische Leistung} &
+    Im stationären Betrieb: \qquad\quad $\left(\dfrac{d}{dt} = 0\right)$ \newline
     $P_{el} = P_e + P_a = U_e\cdot I_e + U_a\cdot I_a$ \newline \newline
-    $P_{el} = \underbrace{R_e\cdot I_e^2}_{\substack{Ohmsche \\ Erregerverluste}} + \underbrace{R_a\cdot I_a^2}_{\substack{Ohmsche \\ Ankerverluste}} + \underbrace{\omega\cdot\psi\cdot I_a}_{\substack{Mechanische\\Leistung}}$ \newline &
-    $[P] = W$
+    $P_{el} = \underbrace{R_e\cdot I_e^2}_{\substack{\text{Ohmsche}\\\text{Erregerverluste}}} + \underbrace{R_a\cdot I_a^2}_{\substack{\text{Ohmsche}\\\text{Ankerverluste}}} + \underbrace{\omega\cdot\psi\cdot I_a}_{\substack{\text{Mechanische}\\\text{Leistung}}} $ 
+    &
+    $[P] = W$ 
     \\ \hline
     
     \textbf{Mechanische Leistung} &
@@ -58,11 +64,11 @@
     \textbf{Drehmoment} &
     $M = \psi\cdot I_a\, = L_e\cdot I_e\cdot I_a$ &
     $[M] = Nm$
-    \\ \lasthline
+    \\ \hline
+	
 \end{longtable}
 \clearpage
-\newpage
-
+\pagebreak
 \subsection{Nebenschluss GSM}
     Die Erreger- und Ankerwicklung werden parallel an die gleiche Spannungsquelle geschaltet.\newline Beim Nebenschluss sind die Anker- und Erregerspannung gleich und der Anker- und Erregerstrom unabhängig \newline voneinander. \\
     \begin{minipage}[b]{0.4\textwidth}
@@ -71,10 +77,9 @@
     \end{minipage}
     \begin{minipage}[b]{0.5\textwidth}
     	\raggedright
-    	\includegraphics[scale = 0.6]{images/KennlinieNebenschluss}
+    	\includegraphics[scale = 0.8]{images/KennlinieNebenschluss1}
     \end{minipage}\\
     
-    %\renewcommand{\arraystretch}{2.5}
     \begin{longtable}{| p{.25\textwidth} | p{.40\textwidth} | p{.30\textwidth} |}
     	\firsthline
     	\textbf{Drehmoment}	&
@@ -82,7 +87,7 @@
         $I_a = \dfrac{U - \omega\cdot\psi}{R_a}$ \newline \newline
         $M = I_a\cdot\psi\, = \, I_a \cdot L_e \cdot I_e $ \newline\newline
         $M = \dfrac{U\cdot\psi}{R_a}-\dfrac{\omega\cdot\psi^2}{R_a}$ \newline &
-        Spannungsgleichung der Nebenschluss-Schaltung\newline \newline
+         Spannungsgleichung \newline der Nebenschluss-Schaltung\newline \newline
         $\psi = L_e\cdot I_e \, \widehat{=}$ Erregerfluss \newline \newline
         $\omega\, = \, 2\pi\cdot n \quad \left[\dfrac{1}{s}\right]$
         \\ 	\hline
@@ -116,28 +121,26 @@
     \newpage
 
 \subsection{Reihenschluss GSM}
-    Die Erreger- und Ankerwicklung werden in Serie an die gemeinsame Spannungsquelle geschaltet.\newline Beim Reihenschluss sind die Anker- und Erregerströme gleich und die Anker- und Erregerspannungen sind deshalb \newline stark voneinander abhängig.\newline
+    Die Erreger- und Ankerwicklung werden in Serie an die gemeinsame Spannungsquelle geschaltet.\newline Beim Reihenschluss sind die Anker- und Erregerströme gleich und die Anker- und Erregerspannungen sind deshalb  stark voneinander abhängig.\newline
     \begin{minipage}[b]{0.4\textwidth}
     	\raggedright
     	\includegraphics[width=6cm]{images/Reihenschluss.png}
     \end{minipage}
     \begin{minipage}[b]{0.5\textwidth}
     	\raggedright
-    	\includegraphics[scale = 0.6]{images/KennlinieReihenschluss}
+    	\includegraphics[scale = 0.8]{images/KennlinieReihenschluss1}
     \end{minipage}\\
     \begin{minipage}[b]{0.7\linewidth}
         \raggedleft
         \textcolor{red}{Achtung: M $\rightarrow$ 0 $\Rightarrow$ n $\rightarrow \infty$}
     \end{minipage}
-    \\
-    
     \begin{longtable}{| p{.25\textwidth} | p{.40\textwidth} | p{.30\textwidth} |}
     	\firsthline
     	\textbf{Drehmoment}	&
         $U = (R_a + R_e)\cdot I + 2\pi n\cdot\psi$ \newline \newline
         $M = I\cdot\psi$ \newline \newline
-        $M = I\cdot\psi = L_e\cdot\left(\dfrac{U}{R_a + R_e + 2\pi n\cdot\psi}\right)^2$\newline\newline
-        $\psi = L_e\cdot I$ & Spannungsgleichung der Reihenschluss-Schaltung \newline \newline $I\,=\,I_a\,=\,I_e$
+        $M = I\cdot\psi = L_e\cdot\left(\dfrac{U}{R_a + R_e + 2\pi n\cdot L_e}\right)^2$\newline\newline
+        $\psi = L_e\cdot I$ & Spannungsgleichung \newline der Reihenschluss-Schaltung \newline \newline $I\,=\,I_a\,=\,I_e$
         \\\hline
         
     	\textbf{Anlaufmoment}	&
@@ -150,7 +153,7 @@
         $[n] = \dfrac{1}{s}$
         \\ \lasthline
     \end{longtable}
-
+\vspace{-0.6cm}
 \subsection{Drehzahlregelung}
     \begin{minipage}[b]{0.33\textwidth}
     	\raggedright

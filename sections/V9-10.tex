@@ -1,8 +1,9 @@
 \section{Asynchronmotor}
-Eigenschaften:
+\begin{minipage}{0.6\linewidth}
+\textbf{Eigenschaften:}
 \begin{itemize}
-    \item Meist verwendete Elektromotor
-    \item Drehfekd wird durch den Ständer erzeugt
+    \item meist verwendeter Elektromotor
+    \item Drehfeld wird durch den Ständer erzeugt
     \item Drehmoment entsteht durch den im Läufer induzierten Strom
 \end{itemize}
 \textcolor{green}{Vorteil}:
@@ -14,10 +15,14 @@ Eigenschaften:
 \begin{itemize}
 	\item Extrem hoher Anlaufstrom \newline
 		$\Rightarrow$ dies wird vermindert mit der Stern-Dreieck-Umschalt-Methode \newline
-        (Im Dreieck 3 Mal mehr Leistung im Dreieckbetrieb)
+        (3 Mal mehr Leistung im Dreieckbetrieb)
 \end{itemize}
-
-\subsection{Aufbau  Ständer}
+\end{minipage}
+\begin{minipage}{0.4\linewidth}
+\textbf{Kennlinie Asynchronmotor}\newline
+\includegraphics[scale = 0.6]{images/KennlinieASM}
+\end{minipage}
+\subsection{Aufbau Ständer}
     \begin{minipage}[b]{0.45\linewidth}
     	\includegraphics[scale = 0.3]{images/AsynchronmotorAufbau}
     \end{minipage}
@@ -46,7 +51,7 @@ Eigenschaften:
 \subsection{Formeln Läufer}
     \includegraphics[scale = 0.4]{images/QuerschnittAmotor}
     \\ \\
-    \begin{longtable}{| p{.25\textwidth} | p{.40\textwidth} | p{.30\textwidth} |}
+    \begin{longtable}{| p{.30\textwidth} | p{.35\textwidth} | p{.25\textwidth} |}
     	\hline
     	\textbf{Induzierte Spannung} &
         \[ U_i = 4.44\cdot f\cdot w\cdot\xi\cdot\phi \] &
@@ -64,7 +69,7 @@ Eigenschaften:
         \begin{equation*}\vec{M_2} = \vec{r_2}\times\vec{F_2}\end{equation*}&
         \\ \hline
         
-        \textbf{Relativdrehzahl}&
+        \textbf{Drehzahl}&
         \[ n_1= \frac{f_1}{p}\]
         \[ n_2=n_1 - n \]&
         n = Drehzahl des Läufers \newline
@@ -110,10 +115,10 @@ Eigenschaften:
          $ P_1 $ - primäre Netzleistung \newline
          $ P_{Cu} $ - Ohmsche Verluste \newline
          $ P_{Fe} $ - Blechkernverluste \newline
-         $ P_{D1} $ - Drehfeldleistunf \newline
+         $ P_{D1} $ - Drehfeldleistung \newline
          $ P_m $ - mechanische Leistung \newline
-         $ P_r $ - Reibungsverluste und Lüftung \newline
-         $ P_m ' $ - mech. Nutzleistung \newline
+         $ P_R $ - Reibungsverluste und Lüftung \newline
+         $ P_m^{\,\prime} $ - mech. Nutzleistung \newline
          M - Drehmoment
         \\ \hline
         
@@ -132,67 +137,60 @@ Eigenschaften:
         \[ M=\frac{q_1}{2\pi n_1}\cdot \frac{U_1^2}{(R_2'/s)^2+X_{2\sigma}^2}\cdot\frac{R_2'}{s} \]
         \[ s_K=\frac{R_2'}{X_{2\sigma}'} \]
         \[ M_K= \frac{q_1}{4\pi n_1}\cdot\frac{U_1^2}{X'_{2\sigma}} \]&
-        $ q_1 $= Anz Phasen der Statorwiklung\newline
+        $ q_1 $= Anz. Phasen der \newline Statorwicklung\newline
         \\ \hline
         
         \textbf{Klosssche Gleichung}&
-        \[ \frac{M}{M_K}=\frac{2}{\frac{s}{s_K}+\frac{s_K}{s}} \]
-        \[ \frac{1}{2} sk^2 - \frac{2 Mk}{M}sk+s=0 \]&
+        \[ \frac{M}{M_k}=\frac{2}{\frac{s}{s_k}+\frac{s_k}{s}} \]
+        \[ \frac{1}{2} s_k^2 - \frac{2 M_k}{M}s_k+s=0 \]&
         \\ \hline        
               
     \end{longtable}
     
-\subsection{Model der Asynchromaschine}
+\subsection{Modell der Asynchronmaschine}
     \includegraphics[scale = 0.6]{images/ModelASM}
     \includegraphics[scale = 0.7]{images/ModelASMZeiger}
-    %TODO Kennlinie ASM S27
 
     \begin{longtable}{| p{.55\textwidth} | p{.45\textwidth}|}
         \hline
         \textbf{Grundgleichungen:}\newline
-        \[ \underline{I_1}= \underline{I_{FE}}+\underline{I_\mu}+\underline{I'_2} \approx \underline{I'_2} \]
+        \[ \underline{I_1}= \underline{I_{Fe}}+\underline{I_\mu}+\underline{I'_2} \approx \underline{I'_2} \]
         \[ \underline{U_1}= R_1 \cdot \underline{I_1}+jX_{\sigma 1}\cdot \underline{I_1}+ \underline{U_h} \approx \underline{U_h} \]
         \textbf{Übersetzungsverhältnis:}\newline
         \[ u=\frac{N_1 \cdot k_{w1}}{N_2 \cdot k_{w2}}\]
-        \[ \underline{I'_2}=\underline{I_2 \cdot u} \]
+        \[ \underline{I'_2}=\underline{I_2} \cdot u \]
         \[ R'_2 = R_2 \cdot u^2 \]&
         N = Windungszahl \newline
         $ k_w $ = Wicklungsfaktor \newline
         $ R_1, X_{\sigma 1} $= Widerstand und Streureaktanz des Stators \newline
         $ R_2, X_{\sigma 2} $= Widerstand und Streureaktanz des Rotors \newline
-        $ R_{fe} $= Eisen-Verlustewiderstand \newline
+        $ R_{Fe} $= Eisen-Verlustwiderstand \newline
         $ X_h $= Hauptreaktanz \newline
         $ U_h $= innere Spannung \newline
-        $ I_\mu $= Magentisierungsstrom
+        $ I_\mu $= Magnetisierungsstrom
         \\ \hline      
         
         \textbf{Leerlauf} \newline
-        \tabbild[scale=1]{images/ASMLeerlaufZeiger}&
-         \newline
-        \tabbild[scale=1.3]{images/ASMLeerlauf}
-        \\
-        
-        \[ \underline{I_0}=\underline{I_{FE}} + \underline{I_\mu} \]
+        \tabbild[scale=1]{images/ASMLeerlaufZeiger} \newline         
+		\textbf{Im Leerlauf wird die Asynchronmaschine an der \newline Welle nicht belastet.} \newline
+        \[ R_1 << R_{Fe} \qquad X_{\sigma 1} << X_h\]&
+        \textbf{Ersatzschaltbild} 
+		\newline
+        \tabbild[scale=0.9]{images/ASMLeerlauf} \newline \[ \underline{I_0}=\underline{I_{Fe}} + \underline{I_\mu} \]
         \[ cos(\varphi_0)= \frac{P_0}{U_0 \cdot I_0} \]
-        \[ R_{FE}=\frac{U_0}{I_{FE}}=\frac{U_0}{I_0 \cdot cos(\varphi_0)} \]
-        \[ X_h = \frac{U_0}{I_\mu}=\frac{U_0}{I_0 \cdot sin(\varphi_0)} \]&
-         \textbf{Im Leerlauf wird die Asynchronmaschine an der Welle nicht belastet.} \newline
-        \[ R_1 << R_{FE} \qquad X_{\sigma 1} << X_h\]
+        \[ R_{Fe}=\frac{U_0}{I_{Fe}}=\frac{U_0}{I_0 \cdot cos(\varphi_0)} \]
+        \[ X_h = \frac{U_0}{I_\mu}=\frac{U_0}{I_0 \cdot sin(\varphi_0)} \]
         \\ \hline
         
         \textbf{Kurzschluss} \newline
-        \tabbild[scale=1]{images/ASMKurzschlussZeiger}&
+        \tabbild[scale=1]{images/ASMKurzschlussZeiger} \newline \[ cos(\varphi_K)= \frac{P_K}{U_K \cdot I_K} \]
+        \[ R_1 + R'_2 = \frac{U_R}{I_K} = \frac{U_K \cdot cos(\varphi_K)}{I_K} \]
+        \[ X_{\sigma 1}+ X'_{\sigma 2}= \frac{U_X}{I_K}=\frac{U_K \cdot sin(\varphi_K)}{I_k} \] &
+		\textbf{Ersatzschaltbild}
          \newline
-        \tabbild[scale=0.8]{images/ASMKurzschluss}
-        \\
-        
-        \[ cos(\varphi_K)= \frac{P_K}{U_K \cdot I_K} \]
-        \[ R1 + R'_2 = \frac{U_R}{I_K} = \frac{U_K \cdot cos(\varphi_k)}{I_K} \]
-        \[ X_{\sigma 1}+ X'_{\sigma 2}= \frac{U_X}{I_K}=\frac{U_K \cdot sind(\varphi_K)}{I_k} \]
-        &
-         \textbf{Im Kurzschluss wird der Rotor der Asynchronmaschine blockiert.} \newline
-         \[ R_1 << R_{FE} \qquad X_{\sigma 1} << X_h\]
-         \\ \hline
+        \tabbild[scale=0.8]{images/ASMKurzschluss} \newline \textbf{Im Kurzschluss wird der Rotor der \newline Asynchronmaschine blockiert. (s=1)} \newline
+         \[ R_1 << R_{Fe} \qquad X_{\sigma 1} << X_h\]
+        \\ \hline
          
          \textbf{4Q- Umrichter} \quad FU = Frequenzumrichter\newline
          \tabbild[scale=0.8]{images/4QSchema}&
@@ -204,6 +202,3 @@ Eigenschaften:
         
         
     \end{longtable}
-    
-    \clearpage
-    \pagebreak
