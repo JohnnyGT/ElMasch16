@@ -53,13 +53,13 @@ Das Drehfeld und der Rotor einer Synchronmaschine rotieren mit derselben Geschwi
 
 \subsection{Grundgleichungen}
     \begin{minipage}[b]{0.5\linewidth}
-        \includegraphics[width = 7cm]{images/Wicklung1}
+        \includegraphics[width = 5cm]{images/Wicklung1}
     \end{minipage}
     \begin{minipage}[b]{0.5\linewidth}
-        \includegraphics[width = 8cm]{images/Wicklungen}
+        \includegraphics[width = 6.2cm]{images/Wicklungen}
     \end{minipage}
     \vspace{-1cm}
-    \begin{tabular}[b]{| C{5cm}| P{8.5cm} | P{5 cm} |}
+    \begin{longtable}[b]{| C{5cm}| P{8.5cm} | P{5 cm} |}
     	\hline
         \textbf{Strangspannung} 	&
         $\underline{U_1\!} = \underline{U_d\!} + \underline{U_P\!}$ &
@@ -78,17 +78,21 @@ Das Drehfeld und der Rotor einer Synchronmaschine rotieren mit derselben Geschwi
         \\ \hline
         
         \textbf{Synchronreaktanz} &
-        $X_d = X_{\sigma 1} + X_h$ &
+        $X_d = X_{\sigma 1} + X_h$ \newline \newline 
+        $X_d = 2\pi f L_d$ \newline \newline
+        $X_d = \dfrac{U_1}{\sqrt{3}\cdot I_K}$&
         $X_d \, \widehat{=} $ Synchronreaktanz \newline
         $X_{\sigma 1} \, \widehat{=}$ Streureaktanz des Stators \newline
-        $X_h \, \widehat{=}$ der Hauptreaktanz
+        $X_h \, \widehat{=}$ der Hauptreaktanz \newline 
+        $U_1\, \widehat{=}$ der Verketteten Spannung
         \\ \hline
         
         \textbf{Leistung} \newline
         \tabbild[scale=0.4]{images/SynchronKennlinie} &
         $\varphi = -\alpha - \dfrac{\pi}{2}$ \newline
         $\cos(\varphi) = -\sin(\alpha)$ \newline
-       	$ (X_d \cdot I_1)^2=(\frac{U_1}{\sqrt{3}})^2+(\frac{U_p}{\sqrt{3}})^2 - 2\cdot \frac{U_1}{\sqrt{3}}\cdot \frac{U_p}{\sqrt{3}} cos(\delta) $ \newline\newline
+       	$ (X_d \cdot I_1)^2=(\frac{U_1}{\sqrt{3}})^2+(\frac{U_p}{\sqrt{3}})^2 - 2\cdot \frac{U_1}{\sqrt{3}}\cdot \frac{U_p}{\sqrt{3}} cos(\delta) $ \newline \newline
+       	$P_{Pro Strang} = U_1\cdot I_1\cdot cos(\varphi)$ \newline
         \textbf{Generatorbetrieb:} $\delta < 0$ \newline
         \textcolor{red}{d} = $-U_p\cdot\sin(\delta)$ \newline
         \qquad $= X_d\cdot I_1\cdot\sin(\alpha) = -X_d\cdot I_1\cdot\cos(\varphi)$ \newline \newline
@@ -100,11 +104,12 @@ Das Drehfeld und der Rotor einer Synchronmaschine rotieren mit derselben Geschwi
         $U_P$ ist die Polradspannung, sie entspricht einer fiktiven Grösse! Sie kann wiederum durch ein Zeigerdiagramm bestimmt werden.
         \\ \hline
 		\textbf{Erreger-Regulierkennlinien} & 
-		$ \dfrac{I_e}{I_{e0}} = \sqrt{cos^2(\varphi) + \left(x\cdot\dfrac{I_1}{I_N}-sin(\varphi)\right)^2}$ & $I_e = f(I_1)$ \newline $cos(\varphi)$ gegeben \newline $I_1$ - gewünschter Netzstrom \newline Bezugswert $x = \dfrac{X_d}{X_N}$
+		$ \dfrac{I_e}{I_{e0}} = \sqrt{cos^2(\varphi) + \left(x\cdot\dfrac{I_1}{I_N}-sin(\varphi)\right)^2}$ & $I_e = f(I_1)$ \newline $cos(\varphi)$ gegeben \newline $I_1$ - gewünschter Netzstrom \newline Bezugswert $x = \dfrac{X_d}{X_N}$ 
 		\\ \hline
-	    \end{tabular}
-    \clearpage
-    \newpage
+		\textbf{mechanisches Moment} &  $P = \Omega\cdot M = \dfrac{\omega}{p}\cdot M$ & Gilt falls $P_V = 0$ 
+		\\ \hline
+	
+	    \end{longtable}
     
     \includegraphics[scale = 0.8]{images/KennlinieSynchronmaschine}
 

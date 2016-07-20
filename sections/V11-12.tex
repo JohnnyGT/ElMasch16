@@ -63,7 +63,7 @@
     \end{longtable}
 
 \subsection{Permanentmagnet-SM}
-    \begin{longtable}{| p{.35\textwidth} | p{.60\textwidth} |}
+    \begin{longtable}{| p{.41\textwidth} | p{.59\textwidth} |}
         \hline
         \textbf{Aufbau} \newline
         \tabbild[scale=0.5]{images/AufbauPMagnetSM.JPG} &	
@@ -73,12 +73,12 @@
         Rotor-Zähne: $ RZ_1, RZ_2$ \newline \tabbild[scale=0.5]{images/Magnet}
         \\ \hline
         
-        \textbf{Grundgleichungen} & %TODO Format 3-Spalten
+        \textbf{Grundgleichungen} & 
         Stator-Zahnzahl: $  Z_s $  \newline
         Rotor-Zahnzahl: $ Z_R $  \newline
         Stator-Winkel: $ \alpha_S=\frac{2\pi}{Z_s}$ \quad [rad]  \newline
         Rotor-Winkel: $ \alpha_R=\frac{2\pi}{Z_R}$ \quad [rad]  \newline
-        Vollschritt-Winkel: $ \alpha_0 = \alpha_R - \alpha_S $ \newline
+        Vollschritt-Winkel: $ \alpha_0 = \alpha_R - \alpha_S $ \quad [rad]\newline
         Der Vollschrittwinkel bezeichnet die Bewegung des Rotors pro Einzel-Steuerimpuls. \newline
         Strangzahl: $ m= \frac{Z_s}{Z_S - Z_R} $\newline
         Schrittzahl: $ N_p = \frac{2\pi}{\alpha_0}  $\newline
@@ -92,9 +92,10 @@
         \textcolor{blue}{lineare Annäherung} \newline \newline
         N = Windungszahl Statorstrang \newline
         $ A_z $ = Zahnfläche \newline
-        $ \delta_{d} = \delta_{q}$ = Höhe des Luftspalts
+        $ \delta_{d} = \delta_{q}$ = Höhe des Luftspalts \newline
+        $ w_s $ = Zahnweite Stator \newline
+        $ w_{zu} $ = Breite der Zahnüberlappung
         \\ \hline            
-        %TODO w_zu ist die breite der Zahnüberlappung in q position??ubung 7 
         \textbf{Statorinduktivität}\newline
 		d-Achse Parallel\newline
         \tabbild[scale=0.6]{images/StatordSM}&
@@ -105,16 +106,25 @@
         \[\quad =\mu_0 2N^2\frac{A_z}{\delta_d} 
          = \mu_0 2N^2\frac{L \cdot w_s}{\delta_d} \]
         \\ 
-                   
-        q-Achse Parallel\newline
+        
+        $ w_{zu} $ > 0 Zahnüberlappung \newline
+        $ w_{zu}\, \le $ Keine Zahnüberlappung \newline \newline
+        q-Achse Parallel (Keine Zahnüberlappung)\newline
         \tabbild[scale=0.6]{images/StatorqSM}&
         \[ L_q = \frac{\varPsi_{mq}}{I_1}
         =2N \frac{\varPhi_{mq}}{I_1}
         =2N\frac{B_{\delta q}A_z}{I_1}
         =\mu_0 2N\frac{2NI_1A_z}{2\delta_q I_1}\]
-        \[\quad =\mu_0 2N^2\frac{A_z}{\delta_q} 
-        = \mu_0 2N^2\frac{L \cdot w_{zu}}{\delta_q} \]
+        \[\quad =\mu_0 2N^2\frac{A_z}{\delta_q} \] \\
         
+        q-Achse Parallel (mit Zahnüberlappung)\newline
+        \tabbild[scale=0.25]{images/qAchseMZ}&
+        \[ L_q = \frac{\varPsi_{mq}}{I_1}
+        =2N \frac{\varPhi_{mq}}{I_1}
+        =2N\frac{B_{\delta q}A_z}{I_1}
+        =\mu_0 2N\frac{2NI_1A_z}{2\delta_q I_1}\]
+        \[\quad =\mu_0 2N^2\frac{A_z}{\delta_q} 
+        = \mu_0 2N^2\frac{L \cdot w_{zu}}{\delta_d} \]
         \\ \hline
     \end{longtable}
     \clearpage
@@ -151,7 +161,7 @@
     \\ \hline
     
     \textbf{Motormoment (lineare Annäherung)}&
-    \[ M_M = \frac{1}{2}\frac{L_d - L_q}{\alpha_0}I_1^2 \]
+    \[ M_M = \frac{1}{2}\frac{L_d - L_q}{\alpha_0}I_1^2 \qquad\qquad [\alpha_0] = rad\]
     \\ \hline
     
     \newline
@@ -163,7 +173,7 @@
     \textbf{Betriebsverhalten}\newline
     \[ J_g \frac{\diff \omega_r}{\diff t}= J_g \frac{\omega_s - \omega_1}{T_s} = M_M - M_L \] \newline
     $ \omega_s = 2\pi\frac{n_s}{60}=2\pi\frac{f_s}{N_p}=\alpha_0 f_s $&
-    $ J_g $ = Motorbezogenes Trägheitsmoment \newline
+    $ J_R = J_g $ = Motorbezogenes Trägheitsmoment \newline
     $ M_M $ = Motorbezogenes Drehmoment \newline
     $ M_L $ = Lastmoment \newline
     $ \omega_s $ = Kreisgeschwindigkeit Statorfeld \newline
@@ -176,8 +186,9 @@
     \[=M_m -J_g\alpha_0f_s^2+J_g\omega_1f_s \]
     \[ f_{AG}=\sqrt{\frac{M_M}{J_R \cdot \alpha_0}} \]&
     \newline
-    $ F_s = \frac{1}{T_s} $ = Schaltfrequenz\newline
-    $ \omega_1 $ = Anfangsgeschwindigkeit \newline
+    $ f_s = \frac{1}{T_s} $ = Schaltfrequenz\newline
+    $ \omega_1 $ = Anfangsgeschwindigkeit \newline \newline 
+    $f_{AG}: M_M\,\&\,\omega_1 = 0$
     \\ \hline
     
     \textbf{Anlaufkennlinie}\newline

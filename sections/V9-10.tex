@@ -86,7 +86,8 @@
         \\ \hline 
         
         \textbf{Induzierter Strom des Läufers}&
-         \[ I_2 = \frac{U_{i20}}{\sqrt{(R_2/s)^2+X_{2\sigma}^2}} \]&
+	     \[ I_1 = \frac{U_{1}}{\sqrt{\left(\dfrac{R_2^\prime}{s}\right)^2+X_{2\sigma}^\prime2}} \]
+         \[ I_2 = \frac{U_{i20}}{\sqrt{\left(\dfrac{R_2}{s}\right)^2+X_{2\sigma}^2}} \]&
          \\ \hline
         
         \textbf{Stillstand}\newline
@@ -109,14 +110,15 @@
         \textbf{Verluste Drehmoment}\newline
         \tabbild[scale = 0.3]{images/PVerluste}&
         \[ P_{D1}=P_m+P_{C22} \]
-        \[ P_{D1}=2\cdot\pi\cdot n_1\cdot M \quad
-         P_m = 2\cdot\pi\cdot n\cdot M \]
+        \[ P_{D1}=2\cdot\pi\cdot n_1\cdot M\]
+        \[ P_N = P_m = 2\cdot\pi\cdot n\cdot M \]
         \[ M = \frac{1}{2 \pi n_1}\frac{P_{Cu2}}{s} \]&
          $ P_1 $ - primäre Netzleistung \newline
          $ P_{Cu} $ - Ohmsche Verluste \newline
          $ P_{Fe} $ - Blechkernverluste \newline
          $ P_{D1} $ - Drehfeldleistung \newline
          $ P_m $ - mechanische Leistung \newline
+         $ P_N $ - Nennleistung \newline
          $ P_R $ - Reibungsverluste und Lüftung \newline
          $ P_m^{\,\prime} $ - mech. Nutzleistung \newline
          M - Drehmoment
@@ -129,12 +131,13 @@
         \[= \frac{q_2}{2\pi n_1}\textcolor{green}{\frac{U_{i20}^2}{(R_2/s)^2+X_{2\sigma}^2}}\frac{R_2}{s} \]&
         \textcolor{blue}{M-Kennlinie} \newline
         \textcolor{yellow}{Motorbetrieb} \newline
-        \textcolor{green}{Generator-Betrieb}
+        \textcolor{green}{Generator-Betrieb} \newline \newline
+        $ q_2 $= Anz. Phasen der \newline Statorwicklung\newline
         \\ \hline
         
         \textbf{Anlauf} \newline
         \tabbild[scale=0.4]{images/ASMAnlauf}&
-        \[ M=\frac{q_1}{2\pi n_1}\cdot \frac{U_1^2}{(R_2'/s)^2+X_{2\sigma}^2}\cdot\frac{R_2'}{s} \]
+        \[ M=\frac{q_1}{2\pi n_1}\cdot \frac{U_1^2}{(R_2'/s)^2+X_{2\sigma}^{'2}}\cdot\frac{R_2'}{s} \]
         \[ s_K=\frac{R_2'}{X_{2\sigma}'} \]
         \[ M_K= \frac{q_1}{4\pi n_1}\cdot\frac{U_1^2}{X'_{2\sigma}} \]&
         $ q_1 $= Anz. Phasen der \newline Statorwicklung\newline
@@ -146,7 +149,7 @@
         \\ \hline        
               
     \end{longtable}
-    
+    \clearpage
 \subsection{Modell der Asynchronmaschine}
     \includegraphics[scale = 0.6]{images/ModelASM}
     \includegraphics[scale = 0.7]{images/ModelASMZeiger}
@@ -197,8 +200,5 @@
           \newline
          \tabbild[scale=0.8]{images/4QMn}
          \\ \hline
-         
-        
-        
-        
     \end{longtable}
+    \clearpage
