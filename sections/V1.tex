@@ -1,14 +1,15 @@
 \section{Grundlagen}
 \subsection{Wichtige Formeln}
-    \renewcommand{\arraystretch}{2.5}
+    \renewcommand{\arraystretch}{2}
     \begin{longtable}{| p{.25\textwidth} | p{.40\textwidth} | p{.30\textwidth} |}
         \firsthline
         \textbf{Elektrische Kraft} \newline
         \tabbild[width=3.5cm]{images/ElKraft.png} \newline {\tiny Die Kraftwirkung des geladenen Körpers (Q) auf eine elektrische Probeladung (q)}&
-        \begin{equation*}\vec{F_e} = \dfrac{1}{2\pi\epsilon}\cdot\dfrac{Q\cdot q}{r}\cdot\vec{r_0}\end{equation*}
-        \begin{equation*}F_e = \dfrac{\pi\cdot U^2}{2\cdot r\cdot(\ln{\dfrac{r-R_1}{R_1}})^2}\end{equation*} & \newline
+        \begin{equation*}\vec{F_e}(r) = \dfrac{1}{2\pi\epsilon}\cdot\dfrac{Q\cdot q}{r}\cdot\vec{r_0}\end{equation*}
+        \begin{equation*}F_e(r) = \dfrac{\pi\cdot\epsilon\cdot U^2}{2\cdot r\cdot\left(ln\dfrac{r-R_1}{R_1}\right)^2}\end{equation*} & \newline
         [${F_e}$] = $\dfrac{N}{m}$\newline \newline 
-        $\epsilon\,\widehat{=}\,${\small dielektrische Permittivität}\newline 
+        $\epsilon=\epsilon_0\cdot\epsilon_r\newline
+        \widehat{=}\,${\small dielektrische Permittivität}\newline 
         $\epsilon_0 = 8.8542 \cdot 10^{-12}$ $\left[\dfrac{As}{Vm}\right]$ \newline
         $\vec{r_0}=\dfrac{\vec{r}}{|\vec{r}|}\,\widehat{=}$ Einheitsvektor \newline  
         Q, q$\,\widehat{=}\,$Linienladungsdichte$\,\left[\dfrac{C}{m}\right]$ 
@@ -16,16 +17,44 @@
         
         \textbf{Magnetische Kraft} \newline
         \tabbild[width=3.5cm]{images/magnetischeKraft.png}   &	
-        \begin{equation*}\vec{F_m} = \dfrac{\mu}{2\pi}\cdot\dfrac{I\cdot i}{r}\cdot\vec{r_0} = \mu\cdot i\cdot \vec{l_0}\times\vec{H}\end{equation*} 
-        \begin{equation*}F_m = \dfrac{\mu_0\cdot I^2}{2\cdot\pi\cdot r}\end{equation*} 
+        \begin{equation*}\vec{F_m}(r) = \dfrac{\mu}{2\pi}\cdot\dfrac{I\cdot i}{r}\cdot\vec{r_0} = \mu\cdot i\cdot \vec{l_0}\times\vec{H}\end{equation*} 
+        \begin{equation*}F_m(r) = \dfrac{\mu\cdot I^2}{2\cdot\pi\cdot r}\end{equation*} 
         \includegraphics[width=3cm]{images/vektorprodukt.png}	& \newline
-        $\mu$ $\widehat{=}$ magnetische Permeabilität\newline 
+        $\mu =\mu_0\cdot\mu_r$\newline $\widehat{=}$ magnetische Permeabilität\newline 
         $\mu_0$ = $4\pi\cdot 10^{-7} \,\left[\dfrac{N}{A^2}\right]=\left[\dfrac{Vs}{Am}\right]$ \newline \newline
         $\vec{r_0}=\dfrac{\vec{r}}{|\vec{r}|}\,\widehat{=}$ Einheitsvektor \newline \newline 
         I, i $\widehat{=}$ elektrische Ströme 	\newline \newline 
         $[F_m]$ = $\dfrac{N}{m}$
         \\ \hline
-        
+    \end{longtable}  
+    
+    \begin{minipage}{7cm}
+        \textbf{BSP:}\newline
+         .\hspace{3.5cm}\tabbild[width=8cm]{images/BspVergleich}
+    \end{minipage}
+    \begin{multicols}{2}
+        \begin{minipage}{\linewidth}
+           \textbf{Elektrische Kraft vs.}\newline
+            \begin{equation*}
+            F_e(r) = \dfrac{\pi\cdot\epsilon\cdot U^2}{2\cdot r\cdot\left(ln\dfrac{r-R_1}{R_1}\right)^2} = 2.88\cdot 10^{-11} \quad \left[\dfrac{N}{m}\right]
+            \end{equation*}
+        \end{minipage}
+
+        \begin{minipage}{\linewidth}
+            \textbf{Magnetische Kraft}\newline
+            \begin{equation*}
+             F_m = \dfrac{\mu_0\cdot I^2}{2\cdot\pi\cdot r} = 2.00 \cdot 10^{-6} \quad\left[\dfrac{N}{m}\right]
+            \end{equation*}
+        \end{minipage}        
+    \end{multicols}
+    \begin{minipage}{\linewidth}
+        \vspace{0.5cm}
+        Die magnetische Kraft pro Länge \& Strom ist $7 \cdot 10^4$ grösser als jene der elektrische Kraft.\newline \newline Daher basieren alle elektrischen Maschinen auf der magnetischen Kraft.
+    \end{minipage}
+    \clearpage
+    \subsubsection{Elektrische Kraft}    
+    \begin{longtable}{| p{.25\textwidth} | p{.40\textwidth} | p{.30\textwidth} |}    
+        \firsthline
         \textbf{Elektrisches Feld} \newline \newline
         \tabbild[width=4cm]{images/elektrischesFeld.png} &
         \begin{equation*}\vec{E} = \dfrac{\vec{F_e}}{q} = \dfrac{1}{2\pi\epsilon}\cdot\dfrac{Q}{r}\cdot\vec{r_0}\end{equation*} 
@@ -46,8 +75,11 @@
         \textbf{Elektrischer Strom} 	    &  
         \begin{equation*}I = \dfrac{dQ}{dt} = \dot{Q}	\end{equation*} &  
         \begin{equation*}[I] = A\end{equation*} 
-        \\ \hline
-        		
+        \\ \hline    
+    \end{longtable}   
+    \subsubsection{Magnetische Kraft}     
+    \begin{longtable}{| p{.25\textwidth} | p{.40\textwidth} | p{.30\textwidth} |}  
+        \firsthline		
         \textbf{Magnetische Feldstärke} \newline \newline
         \tabbild[width=4cm]{images/magnetischesFeld.png} &
         \begin{equation*}\vec{H} = \dfrac{I}{2\pi}\cdot\dfrac{\vec{L_0}\times\vec{r_0}}{r} \end{equation*}  \tabbild[width=4cm]{images/MagnetischeFeldstaerke} & 
@@ -114,16 +146,9 @@
         \newline\newline $W_m = \dfrac{1}{2}\cdot\iiint\limits_{(V)}\vec{B}\cdot\vec{H}\cdot dV = \dfrac{1}{2}\cdot\iiint\limits_{(V)}\dfrac{1}{\mu}\cdot B^2\cdot dV$& wobei $A_{Fe}\cdot\delta$ dem Volumen des Luftspalts entspricht. \\
         \hline
 		\textbf{Magnetischer Widerstand} \newline \tabbild[width=3cm]{images/MagnetischeWiderstand} & 
-\[ R_m = \dfrac{V_m}{\phi}\] \newline wenn $\vec{A} \perp \vec{\phi} :$ \newline 
-\[R_m = \dfrac{H_0\cdot l}{B_0\cdot A} = \dfrac{l}{\mu_0\cdot A}\] & 
-\[[R_m] = \dfrac{A}{Vs} \] \\
+        \[ R_m = \dfrac{V_m}{\phi}\] \newline wenn $\vec{A} \perp \vec{\phi} :$ \newline 
+        \[R_m = \dfrac{H_0\cdot l}{B_0\cdot A} = \dfrac{l}{\mu_0\cdot A}\] & 
+        \[[R_m] = \dfrac{A}{Vs} \] \\
 		\hline
-        \textbf{Elektrische Kraft vs.} &\tabbild[width=7cm]{images/BspVergleich} \begin{equation*}
-        F_e\, = \dfrac{\pi\cdot\epsilon_0\cdot U^2}{2\cdot r\cdot\left(ln\dfrac{r-R_1}{R_1}\right)^2} = 2.88\cdot 10^{-11} \quad \left[\dfrac{N}{m}\right]
-        \end{equation*} & Die magnetische Kraft pro \newline Länge \& Strom ist $7 \cdot 10^4$ grösser als die elektrische Kraft. Daher \newline basieren alle elektrischen Maschinen auf der magnetischen Kraft. \\
-        \textbf{Magnetische Kraft}&\begin{equation*}
-        F_m = \dfrac{\mu_0\cdot I^2}{2\cdot\pi\cdot r} = 2.00 \cdot 10^{-6} \quad\left[\dfrac{N}{m}\right]
-        \end{equation*}&\\    
-        \hline    
-        \end{longtable}
+    \end{longtable}
     \clearpage
