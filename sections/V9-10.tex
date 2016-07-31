@@ -1,27 +1,36 @@
 \section{Asynchronmotor}
-\begin{minipage}{0.6\linewidth}
-\textbf{Eigenschaften:}
-\begin{itemize}
-    \item meist verwendeter Elektromotor
-    \item Drehfeld wird durch den Ständer erzeugt
-    \item Drehmoment entsteht durch den im Läufer induzierten Strom
-\end{itemize}
-\textcolor{green}{Vorteil}:
-\begin{itemize}
-	\item sehr einfacher Aufbau
-	\item sehr robust und widerstandsfähig 
-\end{itemize}
-\textcolor{red}{Nachteil}:
-\begin{itemize}
-	\item Extrem hoher Anlaufstrom \newline
-		$\Rightarrow$ dies wird vermindert mit der Stern-Dreieck-Umschalt-Methode \newline
-        (3 Mal mehr Leistung im Dreieckbetrieb)
-\end{itemize}
-\end{minipage}
+\renewcommand{\arraystretch}{0.9}  
 \begin{minipage}{0.4\linewidth}
-\textbf{Kennlinie Asynchronmotor}\newline
-\includegraphics[scale = 0.6]{images/KennlinieASM}
+    \textbf{Eigenschaften:}
+    \begin{itemize}
+        \item meist verwendeter Elektromotor
+        \item Drehfeld wird durch den Ständer erzeugt
+        \item Drehmoment entsteht durch den im Läufer induzierten Strom
+    \end{itemize}
 \end{minipage}
+\begin{minipage}{0.5\linewidth}
+    \textbf{Kennlinie Asynchronmotor}\newline
+    \includegraphics[scale = 0.6]{images/KennlinieASM}
+\end{minipage}
+\begin{multicols}{2}     
+    \begin{minipage}{\linewidth}
+        \textcolor{green}{Vorteil}:
+        \begin{itemize}
+            \item sehr einfacher Aufbau
+            \item sehr robust und widerstandsfähig 
+        \end{itemize}
+    \end{minipage}
+    
+    \begin{minipage}{\linewidth}
+        \textcolor{red}{Nachteil}:
+        \begin{itemize}
+            \item Extrem hoher Anlaufstrom \newline
+            $\Rightarrow$ dies wird vermindert mit der Stern-Dreieck-Umschalt-Methode \newline
+            (3 Mal mehr Leistung im Dreieckbetrieb)
+        \end{itemize}
+    \end{minipage}
+\end{multicols}
+
 \subsection{Aufbau Ständer}
     \begin{minipage}[b]{0.45\linewidth}
     	\includegraphics[scale = 0.3]{images/AsynchronmotorAufbau}
@@ -33,13 +42,19 @@
     	\includegraphics[scale = 0.4]{images/AsynchronmotorStaenderkern}
     \end{minipage}\\
     \subsection{Aufbau Läufer}
-    \begin{minipage}[b]{0.5\linewidth}
-    	\includegraphics[scale = 0.4]{images/AsynchronRotor}
-    \end{minipage}
-    \begin{minipage}[b]{0.5\linewidth}
-    	\includegraphics[scale = 0.4]{images/QuerschnittAsynchronrotor}
-    \end{minipage}
-    \\ \\
+    \begin{multicols}{3}
+        \begin{minipage}{\linewidth}
+        	\includegraphics[width=\linewidth]{images/AsynchronRotor}
+        \end{minipage}   
+             
+        \begin{minipage}{\linewidth}
+        	\includegraphics[width=0.7\linewidth]{images/QuerschnittAsynchronrotor}
+        \end{minipage}  
+              
+        \begin{minipage}{\linewidth}
+            \includegraphics[width=\linewidth]{images/QuerschnittAmotor}
+        \end{minipage}
+    \end{multicols}
     Wirbelströme im Eisen entstehen durch die Induktion des Rotors in den Stator \newline
     $\Rightarrow$ Stator erwärmt sich.\newline
     Durch den Rillenaufbau des Stators können diese Wirbelströme bzw. die Temperaturansteigung minimiert werden.
@@ -49,8 +64,8 @@
     \pagebreak
 
 \subsection{Formeln Läufer}
-    \includegraphics[scale = 0.4]{images/QuerschnittAmotor}
-    \\ \\
+
+
     \begin{longtable}{| p{.30\textwidth} | p{.35\textwidth} | p{.25\textwidth} |}
     	\hline
     	\textbf{Induzierte Spannung} &
@@ -154,7 +169,7 @@
     \includegraphics[scale = 0.6]{images/ModelASM}
     \includegraphics[scale = 0.7]{images/ModelASMZeiger}
 
-    \begin{longtable}{| p{.55\textwidth} | p{.45\textwidth}|}
+    \begin{longtable}{| p{.50\textwidth} | p{.45\textwidth}|}
         \hline
         \textbf{Grundgleichungen:}\newline
         \[ \underline{I_1}= \underline{I_{Fe}}+\underline{I_\mu}+\underline{I'_2} \approx \underline{I'_2} \]

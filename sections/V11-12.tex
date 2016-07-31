@@ -1,8 +1,7 @@
 \section{Schrittmotor}
 \subsection{Merkmale}
     \begin{itemize}
-        \item Der Schrittwinkel hängt vom Aufbau der Maschine ab und kann zwischen 0.6° und 15° sein.
-        \item moderne Arten der Schrittmotoren
+        \item Der Schrittwinkel hängt vom Aufbau der Maschine ab und kann zwischen 0.6\textdegree  und 15\textdegree  sein.
         \item Drehmoment bis zu 5 Nm
         \item Werden im unteren Leistungsbereich eingesetzt
         \begin{itemize}
@@ -16,9 +15,59 @@
         \item kostengünstig
         \item praktisch nicht überlastbar
     \end{itemize}
-
+    \renewcommand{\arraystretch}{2}
+    \begin{tabularx}{0.43\linewidth}{|X|l|}
+        \hline 
+        \textbf{Name}&\textbf{FS} \\
+        \hline
+        Windungszahl Statorstrang/spule&N  \\ 
+        \hline 
+        Zahnfläche&$ A_z $  \\ 
+        \hline
+        Höhe des Luftspalts& $ \delta_{d} = \delta_{q}$ \\ 
+        \hline 
+        Zahnweite (breite) Stator& $ w_S $  \\ 
+        \hline
+        Zahnweite (breite) Rotor& $ w_R $ \\
+        \hline 
+        Breite der Zahnüberlappung&  $ w_{zu} $ \\ 
+        \hline
+        Stator-Zahnzahl& $  Z_s $\\
+        \hline
+        Rotor-Zahnzahl&$ Z_R $ \\
+        \hline 
+        Trägheitsmoment Rotor& $ J_R $ \\
+        \hline
+        Länge des Motors&\textbf{L} \\
+        \hline         
+        & \\
+        \hline                           
+    \end{tabularx}
+    \begin{minipage}{0.5\linewidth}
+        \begin{tabularx}{\linewidth}{|X|l|l|}
+            \hline
+            \textbf{Grösse}&\textbf{Gleichnug}&\textbf{FZ} \\
+            \hline
+            Stator-Winkel&$ \alpha_S=\frac{2\pi}{Z_s}$&[rad] \\
+            \hline    
+            Rotor-Winkel&$ \alpha_R=\frac{2\pi}{Z_R}$&[rad] \\
+            \hline    
+            Vollschritt-Winkel \textbf{*}&$ \alpha_0 = \alpha_R - \alpha_S $ &[rad]\\
+            \hline    
+            Strangzahl&$ m= \frac{Z_s}{Z_S - Z_R} $& \\
+            \hline 
+            Schrittzahl&$ N_p = \frac{2\pi}{\alpha_0}  $& \\
+            \hline        
+            Steuer/Schaltfrequenz&$ f_s = N_p \cdot n $&$n=\left[\dfrac{1}{s}\right]$ \\       
+            \hline              
+        \end{tabularx}\vspace{0.2cm}\newline
+        \textbf{*}Der Vollschrittwinkel bezeichnet die Bewegung des \newline
+         Rotors pro Einzel-Steuerimpuls.       
+    \end{minipage}
+    \clearpage
+    
 \subsection{Reluktanz-SM}
-    \begin{longtable}{| p{.40\textwidth} | p{.60\textwidth} |}
+    \begin{longtable}{| p{.35\textwidth} | p{.60\textwidth} |}
         \firsthline
         \textbf{Aufbau} \newline
         \tabbild[scale=0.5]{images/AufbauReluktanzSM} &	
@@ -29,7 +78,7 @@
         \\ \hline
         
         \textbf{Wirkungsprinzip} \newline
-        \tabbild[scale=0.6]{images/WirkPrinzReluktanzSM.JPG}&
+        \tabbild[scale=0.5]{images/WirkPrinzReluktanzSM.JPG}&
         \newline
         Die magnetische Reluktanzkraft ist immer anziehend \newline
         $\Rightarrow$ versucht den Luftspalt zu verkleinern.
@@ -42,7 +91,7 @@
 	   \item Die Spule $ SW_1 $ ,$ SW_3 $ sind an die Quelle angeschlossen. 
        \item Das magnetische Feld der ersten zwei Spulen wird erzeugt.
        \item Die Reluktanzkraft wirkt auf den Rotor um die Luftspalte zu verringern.
-       \item  Das mechanische Moment wird erzeugt.
+       \item Das mechanische Moment wird erzeugt.
 \end{enumerate}
         %\\ \hline
         
@@ -61,9 +110,9 @@
         
         \\ \lasthline
     \end{longtable}
-
+\clearpage
 \subsection{Permanentmagnet-SM}
-    \begin{longtable}{| p{.41\textwidth} | p{.59\textwidth} |}
+    \begin{longtable}[l]{| p{.41\textwidth} | p{.50\textwidth} |}
         \hline
         \textbf{Aufbau} \newline
         \tabbild[scale=0.5]{images/AufbauPMagnetSM.JPG} &	
@@ -72,30 +121,6 @@
         Stator-Wicklungen: $ SW_1, SW_2, SW_3, SW_4 $ \newline
         Rotor-Zähne: $ RZ_1, RZ_2$ \newline \tabbild[scale=0.5]{images/Magnet}
         \\ \hline
-        
-        \textbf{Grundgleichungen} & 
-        Stator-Zahnzahl: $  Z_s $  \newline
-        Rotor-Zahnzahl: $ Z_R $  \newline
-        Stator-Winkel: $ \alpha_S=\frac{2\pi}{Z_s}$ \quad [rad]  \newline
-        Rotor-Winkel: $ \alpha_R=\frac{2\pi}{Z_R}$ \quad [rad]  \newline
-        Vollschritt-Winkel: $ \alpha_0 = \alpha_R - \alpha_S $ \quad [rad]\newline
-        Der Vollschrittwinkel bezeichnet die Bewegung des Rotors pro Einzel-Steuerimpuls. \newline
-        Strangzahl: $ m= \frac{Z_s}{Z_S - Z_R} $\newline
-        Schrittzahl: $ N_p = \frac{2\pi}{\alpha_0}  $\newline
-        Steuerfrequenz: $ f_s = N_p \cdot n $\quad $ \left(n=\left[\dfrac{1}{s}\right]\right) $\newline
-        \\ \hline
-        
-         \newline
-        \tabbild[scale=0.4]{images/IndukdqSM.JPG}&
-        \newline
-        \textcolor{red}{wahre Induktivität} \newline
-        \textcolor{blue}{lineare Annäherung} \newline \newline
-        N = Windungszahl Statorstrang \newline
-        $ A_z $ = Zahnfläche \newline
-        $ \delta_{d} = \delta_{q}$ = Höhe des Luftspalts \newline
-        $ w_s $ = Zahnweite Stator \newline
-        $ w_{zu} $ = Breite der Zahnüberlappung
-        \\ \hline            
         \textbf{Statorinduktivität}\newline
 		d-Achse Parallel\newline
         \tabbild[scale=0.6]{images/StatordSM}&
@@ -104,7 +129,7 @@
         =2N\frac{B_{\delta d}A_z}{I_1}
         =\mu_0 2N\frac{2NI_1A_z}{2\delta_d I_1} \]
         \[\quad =\mu_0 2N^2\frac{A_z}{\delta_d} 
-         = \mu_0 2N^2\frac{L \cdot w_s}{\delta_d} \]
+         = \mu_0 2N^2\frac{\textbf{L} \cdot w_s}{\delta_d} \]
         \\ 
         
         $ w_{zu} $ > 0 Zahnüberlappung \newline
@@ -124,13 +149,14 @@
         =2N\frac{B_{\delta q}A_z}{I_1}
         =\mu_0 2N\frac{2NI_1A_z}{2\delta_q I_1}\]
         \[\quad =\mu_0 2N^2\frac{A_z}{\delta_q} 
-        = \mu_0 2N^2\frac{L \cdot w_{zu}}{\delta_d} \]
+        = \mu_0 2N^2\frac{\textbf{L} \cdot w_{zu}}{\delta_d} \]
         \\ \hline
     \end{longtable}
     \clearpage
     \pagebreak
     
 \subsection{V11-12 S43}
+    \renewcommand{\arraystretch}{1.5}
 \begin{longtable}{| p{.35\textwidth} | p{.60\textwidth} |}
     \firsthline
 	\textbf{Drehmoment Herleitung}
@@ -157,7 +183,7 @@
     \\ \hline
     
     \textbf{Motormoment}&
-    \[ m_M(t)=\frac{p_\delta}{\omega_r}(t)=\frac{1}{2}\cdot\frac{\diff L}{\diff \gamma_r}(\gamma_r)\cdot i^2(t) \]
+    \[ M_M(t)=\frac{p_\delta}{\omega_r}(t)=\frac{1}{2}\cdot\frac{\diff L}{\diff \gamma_r}(\gamma_r)\cdot i^2(t) \]
     \\ \hline
     
     \textbf{Motormoment (lineare Annäherung)}&
@@ -169,10 +195,12 @@
     \newline
     \tabbild[scale=0.7]{images/MomentdqSMY}
     \\ \hline
-    
+\end{longtable}   
+\begin{longtable}{| p{.50\textwidth} | p{.45\textwidth} |}   
+    \hline 
     \textbf{Betriebsverhalten}\newline
     \[ J_g \frac{\diff \omega_r}{\diff t}= J_g \frac{\omega_s - \omega_1}{T_s} = M_M - M_L \] \newline
-    $ \omega_s = 2\pi\frac{n_s}{60}=2\pi\frac{f_s}{N_p}=\alpha_0 f_s $&
+    \[ \omega_s = 2\pi\frac{n_s}{60}=2\pi\frac{f_s}{N_p}=\alpha_0 f_s \] &
     $ J_R = J_g $ = Motorbezogenes Trägheitsmoment \newline
     $ M_M $ = Motorbezogenes Drehmoment \newline
     $ M_L $ = Lastmoment \newline
