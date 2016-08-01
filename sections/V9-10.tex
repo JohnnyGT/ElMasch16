@@ -64,8 +64,6 @@
     \pagebreak
 
 \subsection{Formeln Läufer}
-
-
     \begin{longtable}{| p{.30\textwidth} | p{.35\textwidth} | p{.25\textwidth} |}
     	\hline
     	\textbf{Induzierte Spannung} &
@@ -77,11 +75,15 @@
         \\ \hline
         
         \textbf{Elektromagnetische Kraft}	&
-        \begin{equation*} \vec{F_2} = I_2\cdot\vec{I_2}\times\vec{B_1}\end{equation*} &
+        \begin{equation*} \vec{F_2} = l_2\cdot\vec{I_2}\times\vec{B_1}\end{equation*} &
+        $ B_1 $= Flussdichte\newline
+        $ I_2 $= Strom Rotor        
+        $ l_2 $= länge Rotor\newline
         \\ \hline
         
         \textbf{Mech. Drehmoment}	&
         \begin{equation*}\vec{M_2} = \vec{r_2}\times\vec{F_2}\end{equation*}&
+        $ r_2 $= radius Rotor
         \\ \hline
         
         \textbf{Drehzahl}&
@@ -104,24 +106,7 @@
 	     \[ I_1 = \frac{U_{1}}{\sqrt{\left(\dfrac{R_2^\prime}{s}\right)^2+X_{2\sigma}^\prime2}} \]
          \[ I_2 = \frac{U_{i20}}{\sqrt{\left(\dfrac{R_2}{s}\right)^2+X_{2\sigma}^2}} \]&
          \\ \hline
-        
-        \textbf{Stillstand}\newline
-         s = 1 \newline
-        $ f_2 = f_1 $ &
-        \[ I_2 = I_{2max} = \frac{U_{i20}}{\sqrt{R_2^2+X_{2\sigma}^2}} \]&
-         \newline
-        \tabbild[scale=0.3]{images/FlussStillstand}       
-        \\ \hline
-        
-         \textbf{Synchronlauf} \newline
-          s = 0 \newline
-         $ f_2 = 0 $&
-         \[ I_2 = I_{2max} = 0\]&
-          \newline
-         \tabbild[scale = 0.3]{images/FlussSynchron}
-         \\ \hline
-
-        
+            
         \textbf{Verluste Drehmoment}\newline
         \tabbild[scale = 0.3]{images/PVerluste}&
         \[ P_{D1}=P_m+P_{C22} \]
@@ -161,13 +146,15 @@
         \textbf{Klosssche Gleichung}&
         \[ \frac{M}{M_k}=\frac{2}{\frac{s}{s_k}+\frac{s_k}{s}} \]
         \[ \frac{1}{2} s_k^2 - \frac{2 M_k}{M}s_k+s=0 \]&
+        $ s_k $= Kippschlupf\newline
+        $ M_k $= Kippmoment
         \\ \hline        
               
     \end{longtable}
-    \clearpage
-\subsection{Modell der Asynchronmaschine}
+\renewcommand{\arraystretch}{1}
+\subsection{Modell der Asynchronmaschine}\vspace{-1cm}
     \includegraphics[scale = 0.6]{images/ModelASM}
-    \includegraphics[scale = 0.7]{images/ModelASMZeiger}
+    \includegraphics[scale = 0.8]{images/ModelASMZeiger}
 
     \begin{longtable}{| p{.50\textwidth} | p{.45\textwidth}|}
         \hline
@@ -177,7 +164,7 @@
         \textbf{Übersetzungsverhältnis:}\newline
         \[ u=\frac{N_1 \cdot k_{w1}}{N_2 \cdot k_{w2}}\]
         \[ \underline{I'_2}=\underline{I_2} \cdot u \]
-        \[ R'_2 = R_2 \cdot u^2 \]&
+        \[ R'_2 = R_2 \cdot u^2 \]\vspace{-0.3cm}&
         N = Windungszahl \newline
         $ k_w $ = Wicklungsfaktor \newline
         $ R_1, X_{\sigma 1} $= Widerstand und Streureaktanz des Stators \newline
@@ -187,33 +174,69 @@
         $ U_h $= innere Spannung \newline
         $ I_\mu $= Magnetisierungsstrom
         \\ \hline      
+    \end{longtable}
+    \subsubsection{Leerlauf}
+    \begin{multicols}{2}
+        \begin{minipage}{\linewidth}
+            Im Leerlauf wird die Asynchronmaschine an der \newline Welle nicht belastet.
+            \[ R_1 << R_{Fe} \qquad X_{\sigma 1} << X_h\]
+            \textbf{Ersatzschaltbild}\newline
+            \tabbild[scale=0.9]{images/ASMLeerlauf}
+        \end{minipage}
         
-        \textbf{Leerlauf} \newline
-        \tabbild[scale=1]{images/ASMLeerlaufZeiger} \newline         
-		\textbf{Im Leerlauf wird die Asynchronmaschine an der \newline Welle nicht belastet.} \newline
-        \[ R_1 << R_{Fe} \qquad X_{\sigma 1} << X_h\]&
-        \textbf{Ersatzschaltbild} 
-		\newline
-        \tabbild[scale=0.9]{images/ASMLeerlauf} \newline \[ \underline{I_0}=\underline{I_{Fe}} + \underline{I_\mu} \]
-        \[ cos(\varphi_0)= \frac{P_0}{U_0 \cdot I_0} \]
-        \[ R_{Fe}=\frac{U_0}{I_{Fe}}=\frac{U_0}{I_0 \cdot cos(\varphi_0)} \]
-        \[ X_h = \frac{U_0}{I_\mu}=\frac{U_0}{I_0 \cdot sin(\varphi_0)} \]
-        \\ \hline
-        
-        \textbf{Kurzschluss} \newline
-        \tabbild[scale=1]{images/ASMKurzschlussZeiger} \newline \[ cos(\varphi_K)= \frac{P_K}{U_K \cdot I_K} \]
-        \[ R_1 + R'_2 = \frac{U_R}{I_K} = \frac{U_K \cdot cos(\varphi_K)}{I_K} \]
-        \[ X_{\sigma 1}+ X'_{\sigma 2}= \frac{U_X}{I_K}=\frac{U_K \cdot sin(\varphi_K)}{I_k} \] &
-		\textbf{Ersatzschaltbild}
-         \newline
-        \tabbild[scale=0.8]{images/ASMKurzschluss} \newline \textbf{Im Kurzschluss wird der Rotor der \newline Asynchronmaschine blockiert. (s=1)} \newline
-         \[ R_1 << R_{Fe} \qquad X_{\sigma 1} << X_h\]
-        \\ \hline
-         
-         \textbf{4Q- Umrichter} \quad FU = Frequenzumrichter\newline
-         \tabbild[scale=0.8]{images/4QSchema}&
-          \newline
-         \tabbild[scale=0.8]{images/4QMn}
+        \begin{minipage}{\linewidth}
+            \tabbild[scale=1]{images/ASMLeerlaufZeiger}
+        \end{minipage}
+    \end{multicols} 
+    \begin{longtable}{| p{.50\textwidth} | p{.45\textwidth}|}
+        \hline
+         \textbf{Synchronlauf} \newline
+         \begin{minipage}{0.5\linewidth}    
+         s = 0 \newline
+         $ f_2 = 0 $\newline
+         $ I_2 = I_{2max} = 0$\newline\newline
+        \end{minipage}
+         \tabbild[scale = 0.3]{images/FlussSynchron}&
+         \textbf{Grundgleichungen}\newline
+         $ \underline{I_0}=\underline{I_{Fe}} + \underline{I_\mu} $\newline
+          $ cos(\varphi_0)= \dfrac{P_0}{U_0 \cdot I_0} $\newline
+          $ R_{Fe}=\dfrac{U_0}{I_{Fe}}=\dfrac{U_0}{I_0 \cdot cos(\varphi_0)} $\newline
+           $ X_h = \dfrac{U_0}{I_\mu}=\dfrac{U_0}{I_0 \cdot sin(\varphi_0)} $
          \\ \hline
+    \end{longtable}
+    
+      \subsubsection{Kurzschluss}
+          \begin{multicols}{2}
+              \begin{minipage}{\linewidth}
+                  Im Kurzschluss wird der Rotor der \newline Asynchronmaschine blockiert. (s=1)
+                  \[ R_1 << R_{Fe} \qquad X_{\sigma 1} << X_h\]
+                  \textbf{Ersatzschaltbild}\newline
+                  \tabbild[scale=0.8]{images/ASMKurzschluss}
+              \end{minipage}
+              
+              \begin{minipage}{\linewidth}
+                  \tabbild[scale=1]{images/ASMKurzschlussZeiger}
+              \end{minipage}
+          \end{multicols}   
+          
+     \begin{longtable}{| p{.50\textwidth} | p{.45\textwidth}|}  
+         \hline
+         \textbf{Stillstand}\newline 
+         \begin{minipage}{0.5\linewidth} 
+             s = 1 \newline  
+             $ f_2 = f_1 $  \newline 
+             $I_2 = I_{2max} = \dfrac{U_{i20}}{\sqrt{R_2^2+X_{2\sigma}^2}}$\newline\newline
+            \end{minipage}
+        \tabbild[scale=0.3]{images/FlussStillstand}&
+        \textbf{Grundgleichungen}\newline
+         $ cos(\varphi_K)= \dfrac{P_K}{U_K \cdot I_K} $\newline
+        $ R_1 + R'_2 = \dfrac{U_R}{I_K} = \dfrac{U_K \cdot cos(\varphi_K)}{I_K} $\newline
+        $ X_{\sigma 1}+ X'_{\sigma 2}= \dfrac{U_X}{I_K}=\dfrac{U_K \cdot sin(\varphi_K)}{I_k} $
+        \\ \hline
+%         \textbf{4Q- Umrichter} \quad FU = Frequenzumrichter\newline
+%         \tabbild[scale=0.8]{images/4QSchema}&
+%          \newline
+%         \tabbild[scale=0.8]{images/4QMn}
+%         \\ \hline
     \end{longtable}
     \clearpage

@@ -1,6 +1,7 @@
 \section{Synchronmaschine}
-    \renewcommand{\arraystretch}{2.5}
-{\scriptsize \textcolor{green}{Vorteil}:
+    \renewcommand{\arraystretch}{2.5} 
+\begin{minipage}{0.5\linewidth}   
+\textcolor{green}{Vorteil}:
 \begin{itemize} 
 	\item sehr robust, elektrodynamisch, mechanisch und thermisch stabil
     \item Hoher Wirkungsgrad (80-90\%)
@@ -11,10 +12,16 @@
 \textcolor{red}{Nachteil}:
 \begin{itemize}
 \item Anlaufstrom
-\end{itemize}}
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.33\linewidth}
+    \includegraphics[width = 8cm]{images/AufbauSynchronmotor}
+\end{minipage}
+\\
 \subsection{Funktionsweise}
 Das Drehfeld und der Rotor einer Synchronmaschine rotieren mit derselben Geschwindigkeit d.h. sind sie im Synchronlauf. \\
 \textbf{Anwendung:} zur Umwandlung von mechanischer Energie in elektrische Energie.
+
 \subsection{Aufbau und Wirkungsprinzip}
     \begin{minipage}[b]{0.5\linewidth}
     	\includegraphics[width = 5cm]{images/Schenkelpolmaschine}
@@ -30,24 +37,19 @@ Das Drehfeld und der Rotor einer Synchronmaschine rotieren mit derselben Geschwi
         
     	\vspace{-0.7cm}
     	\begin{itemize}
-    		\item Grössere Polpaarzahl
+    		\item Grössere Polpaarzahl \geq 1
     		\item Kleinere Drehzahl
     		\item Wasserkraftwerk
     	\end{itemize} &
         \vspace{-0.7cm}
         \begin{itemize}
-        	\item p = 1
+        	\item Polpaarzahl p = 1
         	\item Grössere Drehzahl
         	\item Wärmekraftwerke
         \end{itemize}
         \\ \hline
     \end{tabular}
     \\
-    
-    \begin{minipage}[b]{0.33\linewidth}
-    	\raggedright
-    	\includegraphics[width = 10cm]{images/AufbauSynchronmotor}
-    \end{minipage}
     \clearpage
     \pagebreak
 
@@ -74,45 +76,44 @@ Das Drehfeld und der Rotor einer Synchronmaschine rotieren mit derselben Geschwi
         $\underline{U_P} = \underline{U_P}\left(I_e\right)$ \newline\newline
         $\underline{U_P} = jX_h\cdot I_{e}\,'$  &
         $I_e \, \widehat{=}$ dem Erregerstrom \newline
-        $I_e\,' \widehat{=}$ dem Erregerstrom umgerechnet auf die Statorseite
+        $I_e \,' \widehat{=}$ dem Erregerstrom umgerechnet auf die Statorseite
         \\ \hline
         
         \textbf{Synchronreaktanz} &
         $X_d = X_{\sigma 1} + X_h$ \newline \newline 
         $X_d = 2\pi f L_d$ \newline \newline
-        $X_d = \dfrac{U_1}{\sqrt{3}\cdot I_K}$&
+        $X_d = \dfrac{U_{1Str}}{I_K}$&
         $X_d \, \widehat{=} $ Synchronreaktanz \newline
         $X_{\sigma 1} \, \widehat{=}$ Streureaktanz des Stators \newline
         $X_h \, \widehat{=}$ der Hauptreaktanz \newline 
         $U_1\, \widehat{=}$ der Verketteten Spannung
         \\ \hline
         
-        \textbf{Leistung} \newline
+        \textbf{Leistung} \newline %TODO FORMELN NACHRECHNEN!!!
         \tabbild[scale=0.4]{images/SynchronKennlinie} &
         $\varphi = -\alpha - \dfrac{\pi}{2}$ \newline
-        $\cos(\varphi) = -\sin(\alpha)$ \newline
-       	$ (X_d \cdot I_1)^2=(\frac{U_1}{\sqrt{3}})^2+(\frac{U_p}{\sqrt{3}})^2 - 2\cdot \frac{U_1}{\sqrt{3}}\cdot \frac{U_p}{\sqrt{3}} cos(\delta) $ \newline \newline
-       	$P_{Pro Strang} = U_1\cdot I_1\cdot cos(\varphi)$ \newline
-        \textbf{Generatorbetrieb:} $\delta < 0$ \newline
+        $\cos(\varphi) = -\sin(\alpha)$ \newline\newline
+       	$ (X_d \cdot I_{1Str})^2=U_{1Str}^2+U_{pStr}^2 - 2\cdot U_{1Str}\cdot U_{pStr}\cdot cos(\delta) $ \newline \newline
+       	$P_{Str} = U_{Str}\cdot I_{Str}\cdot cos(\varphi)$ \newline
         \textcolor{red}{d} = $-U_p\cdot\sin(\delta)$ \newline
         \qquad $= X_d\cdot I_1\cdot\sin(\alpha) = -X_d\cdot I_1\cdot\cos(\varphi)$ \newline \newline
-        $P(\delta) = 3\dfrac{U_P\cdot U_1}{X_d}\cdot\sin(\delta)$ \newline \newline
-        $P(\delta) = P_{mech}-P_V = \omega\cdot M - P_V$ \newline \newline
+        $P(\delta) = 3\cdot P_{Str}(\delta)= 3\cdot\dfrac{U_{PStr}\cdot U_{1Str}}{X_d}\cdot\sin(\delta)$ \newline
+        \textbf{Generatorbetrieb:} $\delta < 0$ \newline
+        $P(\delta) = P_{mech}-P_V = \omega\cdot M - P_V$ \newline
         \textbf{Motorbetrieb:} $\delta > 0$ \newline
         $P(\delta) = P_{mech} + P_V = \omega\cdot M + P_V$ &
         Polradwinkel $\delta =  \measuredangle (U_p, U_1)$  \newline \newline
-        $U_P$ ist die Polradspannung, sie entspricht einer fiktiven Grösse! Sie kann wiederum durch ein Zeigerdiagramm bestimmt werden.
+        $U_P$ ist die Polradspannung, sie entspricht einer fiktiven Grösse! Sie kann wiederum durch ein Zeigerdiagramm bestimmt werden.\newline\newline
+        \textbf{ Achte auf Y-$ \Delta $-Umrechnug}
         \\ \hline
 		\textbf{Erreger-Regulierkennlinien} & 
 		$ \dfrac{I_e}{I_{e0}} = \sqrt{cos^2(\varphi) + \left(x\cdot\dfrac{I_1}{I_N}-sin(\varphi)\right)^2}$ & $I_e = f(I_1)$ \newline $cos(\varphi)$ gegeben \newline $I_1$ - gewünschter Netzstrom \newline Bezugswert $x = \dfrac{X_d}{X_N}$ 
 		\\ \hline
 		\textbf{mechanisches Moment} &  $P = \Omega\cdot M = \dfrac{\omega}{p}\cdot M$ & Gilt falls $P_V = 0$ 
-		\\ \hline
-	
+		\\ \hline	
 	    \end{longtable}
     
     \includegraphics[scale = 0.8]{images/KennlinieSynchronmaschine}
-
 \subsection{Zeigerdiagramm im Motorbetrieb}
     P > 0 und $\delta$ > 0 \newline \newline
     \includegraphics[width = 12 cm]{images/ZeigerdiagrammSynchronmaschine}
@@ -121,8 +122,5 @@ Das Drehfeld und der Rotor einer Synchronmaschine rotieren mit derselben Geschwi
     P < 0, $\delta$ < 0  \newline
     \includegraphics[width = 12 cm]{images/ZeigerdiagrammGeneratorbetrieb} \newline \newline
     \includegraphics[scale = 0.4]{images/Stabilitaet}
-
-
-
 \clearpage
 \pagebreak

@@ -1,5 +1,5 @@
 \section{GSM - Gleichstrommotoren}
-{\scriptsize \textcolor{green}{Vorteil}:
+\textcolor{green}{Vorteil}:
 \begin{itemize} 
 	\item lineares Übertragungsverhalten
     \item einfache Ansteuerung, Drehzahleinstellung
@@ -10,9 +10,9 @@
 \item verschleissbehaftet wegen dem mechanischen Kommutator
 \item thermische Verluste entstehen im Rotor und sind schwer abzuführen
 \item maximale Drehzahl durch mech. Kommutator begrenzt
-\end{itemize}}
+\end{itemize}
 
-\vspace{-0.5cm}
+
 \begin{minipage}[b]{0.45\textwidth}
    	\centering
    	\includegraphics[width=8cm]{images/GSM_Aufbau.png}
@@ -28,11 +28,14 @@
    	\includegraphics[width=5cm]{images/Ankerrueckwirkung.png}
    	\vspace{0.2cm}
 \end{minipage}
-\vspace{-1cm}
+
 \subsection{Grenzwerte und Arbeitsbereiche}
-\begin{tabular}{| p{.40\textwidth} | p{.40\textwidth}|}
+\begin{tabular}{| p{.40\textwidth} | p{.40\textwidth}|p{2cm}|}
 \hline
-\vspace{-20pt}\tabbild[scale=0.4]{images/Arbeitsbereiche} & \[P = \omega\cdot M = 2\pi\cdot n\cdot M\] \newline \[M(n) = \dfrac{P_{max}}{2\pi}\cdot\dfrac{1}{n}\] \\
+\vspace{-20pt}\tabbild[scale=0.4]{images/Arbeitsbereiche} &
+\[P = \omega\cdot M = 2\pi\cdot n\cdot M\]
+\[M(n) = \dfrac{P_{max}}{2\pi}\cdot\dfrac{1}{n}\] &
+\vspace{0.5cm}$[n] = \dfrac{1}{s}$\\
 \hline
 \end{tabular}
 \clearpage
@@ -106,7 +109,8 @@
     	\textbf{Anlaufmoment} \newline \newline
         $(n = 0)$	&
         $M_A = \dfrac{U\cdot\psi}{R_a + R_v}$ \newline \newline
-        $I_{Anlauf} \,= \, \dfrac{U}{R_a + R_v} $ &
+        $I_{Anlauf} \,= \, \dfrac{U}{R_a + R_v} $
+        \[\hspace{-0.5cm}R_v=\frac{R_a}{2}\left(\frac{\omega_0}{\omega_0-\omega_n}-2\right)=\frac{U^2}{2\omega_0 M}-R_a  \]&
         $[M] = Nm$ \newline
         $R_a \, \widehat{=}$\, Ankerwiderstand \newline
         $R_v \, \widehat{=}$ Im Ankerkreis in Serie geschalteter Regelungswiderstand (= \textbf{oft 0})

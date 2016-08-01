@@ -47,10 +47,23 @@
             \end{equation*}
         \end{minipage}        
     \end{multicols}
+    
     \begin{minipage}{\linewidth}
         \vspace{0.5cm}
-        Die magnetische Kraft pro Länge \& Strom ist $7 \cdot 10^4$ grösser als jene der elektrische Kraft.\newline \newline Daher basieren alle elektrischen Maschinen auf der magnetischen Kraft.
+        Die magnetische Kraft pro Länge \& Strom ist $7 \cdot 10^4$ grösser als jene der elektrische Kraft.\newline \newline Daher basieren \textbf{alle} elektrischen Maschinen auf der magnetischen Kraft.
     \end{minipage}
+    
+    \begin{minipage}{\linewidth}
+        \textbf{Exkurs Vektorprodukt}\newline
+        \begin{tabular}{|l|l|}
+            \hline 
+            \[ \vec{a}\times\vec{b}=|\vec{a}|\cdot|\vec{b}|\cdot sin(\theta) \] & $ \theta$ = Zwischenwinkel in \textdegree \\ 
+            $ Wenn \; \vec{a}\bot\vec{b} $&  \\ 
+           \[  \vec{a}\times\vec{b}=|\vec{a}|\cdot|\vec{b}| \]&\\
+            \hline 
+        \end{tabular}\includegraphics[width=4cm]{images/Kreuzprodukt}                 
+    \end{minipage}
+
     \clearpage
     \subsubsection{Elektrische Kraft}    
     \begin{longtable}{| p{.25\textwidth} | p{.40\textwidth} | p{.30\textwidth} |}    
@@ -127,6 +140,7 @@
         \textbf{Magnetische Spannung}	 & 
         \begin{equation*}V_m = \int\limits_{A}^{B}\vec{H}\cdot\vec{dl} \approx H_{Luft}\cdot l_{Luft} = V_{mLuft} \end{equation*}											
         & \begin{equation*}[V_m] = A\end{equation*} 
+        $ \approx $ Nur wenn der Kern \textbf{nicht} in \qquad Sättigung
         \\ \hline 
         \textbf{Magnetkreis}	\newline
         \tabbild[width=4cm]{images/magnetkreis.png}  &
@@ -139,12 +153,16 @@
         
         \textbf{Reluktanzkraft} \newline
         \tabbild[width=3cm]{images/reluktanzkraft.png} &
-        \begin{equation*}F_R = -\dfrac{\partial W_m}{\partial\delta} = \mu_0\cdot\dfrac{N^2\cdot I^2\cdot A_{Fe}}{4\cdot\delta^2}\end{equation*} & 
-        wobei $A_{Fe}$ die magnetisch \newline wirksame Fläche des Luftspalts ist. 
+        \vspace{-0.5cm}
+        \begin{equation*}F_R = -\dfrac{\partial W_m}{\partial\delta}=\frac{F_1}{2}= \mu_0\cdot\dfrac{N^2\cdot I^2\cdot A_{Fe}}{4\cdot\delta^2}\end{equation*}
+        \[F_1 = \mu_0\cdot\dfrac{H^2\cdot A_{Fe}}{2}= \mu_0 \cdot \frac{N^2\cdot I^2 \cdot A_{Fe}}{\delta^2 \cdot 2} \] & 
+        wobei $A_{Fe}$ die magnetisch \newline wirksame Fläche des Luftspalts ist. \newline
+        $ F_1 $= Kraft bei 1nem Luftspalt\newline
+        $ F_R $= Kraft beider Luftspalte
         \\ \hline
         \textbf{Magnetische Energie} & 
         $W_m = \dfrac{1}{2}\cdot H_\delta\cdot B_\delta\cdot2\cdot A_{Fe}\cdot\delta = \mu_0\cdot \dfrac{I^2\cdot N^2}{4\cdot\delta}\cdot A_{Fe}$
-        \newline\newline $W_m = \dfrac{1}{2}\cdot\iiint\limits_{(V)}\vec{B}\cdot\vec{H}\cdot dV = \dfrac{1}{2}\cdot\iiint\limits_{(V)}\dfrac{1}{\mu}\cdot B^2\cdot dV$& wobei $A_{Fe}\cdot\delta$ dem Volumen des Luftspalts entspricht. \\
+        \newline\newline $W_m = \dfrac{1}{2}\cdot\iiint\limits_{(V)}\vec{B}\cdot\vec{H}\cdot dV = \dfrac{1}{2}\cdot\iiint\limits_{(V)}\dfrac{1}{\mu}\cdot B^2\cdot dV$&wobei $A_{Fe}\cdot\delta$ dem Volumen des Luftspalts entspricht. \\
         \hline
 		\textbf{Magnetischer Widerstand} \newline \tabbild[width=3cm]{images/MagnetischeWiderstand} & 
         \[ R_m = \dfrac{V_m}{\phi}\] \newline wenn $\vec{A} \perp \vec{\phi} :$ \newline 
