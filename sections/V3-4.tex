@@ -51,16 +51,19 @@
 \end{minipage}
 \begin{longtable}{| p{.25\textwidth} | p{.40\textwidth} | p{.30\textwidth} |}
     \hline
-    \textbf{Erregerwicklung}	&
+    \textbf{Erregerwicklung}\newline
+    {\scriptsize \qquad Stator}	&
     $U_e = R_e\cdot I_e + L_e\cdot\dfrac{dI_e}{dt}$ &
-    Spannungsgleichung des Statorkreises
+    Spannungsgleichung des \newline Statorkreises
     \\ \hline
-    \textbf{Ankerwicklung}	&
-    \[ U_a = R_a \cdot I_a + L_a \cdot \dfrac{dI_a}{dt} + E \] &
-    $E = \omega\cdot\psi$
+    \textbf{Ankerwicklung}\newline
+    {\scriptsize \qquad Rotor}		&
+    $ U_a = R_a \cdot I_a + L_a \cdot \dfrac{dI_a}{dt} + E $\newline\newline
+     $E = \omega\cdot\psi$ &
+    Spannungsgleichung des \newline Rotorkreises
     \newline $\psi = L_e\cdot I_e \, \widehat{=}$ Erreger-/Hauptfluss \newline
     $\omega = 2\pi\cdot n$ \newline
-    \quad n $\widehat{=}$ Drehzahl des Läufers $\left[\dfrac{1}{s}\right]$\newline Spannungsgleichung des \newline Rotorkreises
+    \quad n $\widehat{=}$ Drehzahl des Läufers $\left[\dfrac{1}{s}\right]$\newline 
     \\ \hline
     
     \textbf{Elektrische Leistung} &
@@ -110,7 +113,7 @@
         $(n = 0)$	&
         $M_A = \dfrac{U\cdot\psi}{R_a + R_v}$ \newline \newline
         $I_{Anlauf} \,= \, \dfrac{U}{R_a + R_v} $
-        \[\hspace{-0.5cm}R_v=\frac{R_a}{2}\left(\frac{\omega_0}{\omega_0-\omega_n}-2\right)=\frac{U^2}{2\omega_0 M}-R_a  \]&
+        \[\hspace{-1cm}R_v=\frac{R_a}{2}\left(\frac{\omega_0}{\omega_0-\omega_n}-2\right)=\frac{U^2}{2\omega_0 M}-R_a  \]&
         $[M] = Nm$ \newline
         $R_a \, \widehat{=}$\, Ankerwiderstand \newline
         $R_v \, \widehat{=}$ Im Ankerkreis in Serie geschalteter Regelungswiderstand (= \textbf{oft 0})
@@ -147,7 +150,7 @@
     \end{minipage}\\
     \begin{minipage}[b]{0.7\linewidth}
         \raggedleft
-        \textcolor{red}{Achtung: M $\rightarrow$ 0 $\Rightarrow$ n $\rightarrow \infty$}
+        {\large \textcolor{red}{Achtung: M $\rightarrow$ 0 $\Rightarrow$ n $\rightarrow \infty$}}
     \end{minipage}
     \begin{longtable}{| p{.25\textwidth} | p{.40\textwidth} | p{.30\textwidth} |}
     	\firsthline

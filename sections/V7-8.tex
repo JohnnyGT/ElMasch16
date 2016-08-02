@@ -53,12 +53,14 @@ Das Drehfeld und der Rotor einer Synchronmaschine rotieren mit derselben Geschwi
     \clearpage
     \pagebreak
 
-\subsection{Grundgleichungen}
+
     \begin{minipage}[b]{0.5\linewidth}
+        \subsection{Grundgleichungen}
+        \textbf{Strang Ersatzschaltung:}\newline
         \includegraphics[width = 6cm]{images/Wicklung1}
     \end{minipage}
-    \begin{minipage}[b]{0.5\linewidth}
-        \includegraphics[width = 6.2cm]{images/Wicklungen}
+    \begin{minipage}[t]{0.5\linewidth}
+        \includegraphics[width = 7.5cm]{images/Wicklungen}
     \end{minipage}
     \vspace{-1cm}
     \begin{longtable}[b]{| C{5cm}| P{8.5cm} | P{5 cm} |}
@@ -91,7 +93,6 @@ Das Drehfeld und der Rotor einer Synchronmaschine rotieren mit derselben Geschwi
         
         \textbf{Leistung} \newline %TODO FORMELN NACHRECHNEN!!!
         \tabbild[scale=0.4]{images/SynchronKennlinie} &
-        $\varphi = -\alpha - \dfrac{\pi}{2}$ \newline
         $\cos(\varphi) = -\sin(\alpha)$ \newline\newline
        	$ (X_d \cdot I_{1Str})^2=U_{1Str}^2+U_{pStr}^2 - 2\cdot U_{1Str}\cdot U_{pStr}\cdot cos(\delta) $ \newline \newline
        	$P_{Str} = U_{Str}\cdot I_{Str}\cdot cos(\varphi)$ \newline
@@ -102,12 +103,15 @@ Das Drehfeld und der Rotor einer Synchronmaschine rotieren mit derselben Geschwi
         $P(\delta) = P_{mech}-P_V = \omega\cdot M - P_V$ \newline
         \textbf{Motorbetrieb:} $\delta > 0$ \newline
         $P(\delta) = P_{mech} + P_V = \omega\cdot M + P_V$ &
+         $\varphi = -\alpha - \dfrac{\pi}{2}$ \newline \newline
         Polradwinkel $\delta =  \measuredangle (U_p, U_1)$  \newline \newline
         $U_P$ ist die Polradspannung, sie entspricht einer fiktiven Grösse! Sie kann wiederum durch ein Zeigerdiagramm bestimmt werden.\newline\newline
-        \textbf{ Achte auf Y-$ \Delta $-Umrechnug}
+        \textbf{ Achte auf Y-$ \Delta $-Umrechnug} \newline
+        Seite: \pageref{SternDreieck}
         \\ \hline
 		\textbf{Erreger-Regulierkennlinien} & 
-		$ \dfrac{I_e}{I_{e0}} = \sqrt{cos^2(\varphi) + \left(x\cdot\dfrac{I_1}{I_N}-sin(\varphi)\right)^2}$ & $I_e = f(I_1)$ \newline $cos(\varphi)$ gegeben \newline $I_1$ - gewünschter Netzstrom \newline Bezugswert $x = \dfrac{X_d}{X_N}$ 
+		$ \dfrac{I_e}{I_{e0}} = \sqrt{cos^2(\varphi) + \left(x\cdot\dfrac{I_1}{I_N}-sin(\varphi)\right)^2}$ &
+        $I_e = f(I_1)$ \newline $cos(\varphi)$ gegeben \newline $I_1$ - gewünschter Netzstrom \newline Bezugswert $x = \dfrac{X_d}{X_N}$ \newline $ X_N = Normiert $
 		\\ \hline
 		\textbf{mechanisches Moment} &  $P = \Omega\cdot M = \dfrac{\omega}{p}\cdot M$ & Gilt falls $P_V = 0$ 
 		\\ \hline	
