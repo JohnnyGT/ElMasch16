@@ -64,6 +64,31 @@
     \pagebreak
 
 \subsection{Formeln Läufer}
+\renewcommand{\arraystretch}{1}
+\subsection{Modell der Asynchronmaschine}\vspace{-1cm}
+\includegraphics[scale = 0.6]{images/ModelASM}
+\includegraphics[scale = 0.8]{images/ModelASMZeiger}
+
+\begin{longtable}{| p{.50\textwidth} | p{.45\textwidth}|}
+    \hline
+    \textbf{Grundgleichungen:}\newline
+    \[ \underline{I_1}= \underline{I_{Fe}}+\underline{I_\mu}+\underline{I'_2} \approx \underline{I'_2} \]
+    \[ \underline{U_1}= R_1 \cdot \underline{I_1}+jX_{\sigma 1}\cdot \underline{I_1}+ \underline{U_h} \approx \underline{U_h} \]
+    \textbf{Übersetzungsverhältnis:}\newline
+    \[ u=\frac{N_1 \cdot k_{w1}}{N_2 \cdot k_{w2}}\]
+    \[ \underline{I'_2}=\underline{I_2} \cdot u \]
+    \[ R'_2 = R_2 \cdot u^2 \]\vspace{-0.3cm}&
+    N = Windungszahl \newline
+    $ k_w $ = Wicklungsfaktor \newline
+    $ R_1, X_{\sigma 1} $= Widerstand und Streureaktanz des Stators \newline
+    $ R_2, X_{\sigma 2} $= Widerstand und Streureaktanz des Rotors \newline
+    $ R_{Fe} $= Eisen-Verlustwiderstand \newline
+    $ X_h $= Hauptreaktanz \newline
+    $ U_h $= innere Spannung \newline
+    $ I_\mu $= Magnetisierungsstrom
+    \\ \hline      
+\end{longtable}
+
     \begin{longtable}{| p{.30\textwidth} | p{.35\textwidth} | p{.25\textwidth} |}
     	\hline
     	\textbf{Induzierte Spannung} &
@@ -102,9 +127,10 @@
         Stillstand: s = 1
         \\ \hline 
         
-        \textbf{Induzierter Strom des Läufers}&
-	     \[ I_1 = \frac{U_{1}}{\sqrt{\left(\dfrac{R_2^\prime}{s}\right)^2+X_{2\sigma}^\prime2}} \]
+        \textbf{Induzierter Strom}&
+	     \[I_1=\frac{U_{1}}{\sqrt{\left(\dfrac{R_2^\prime}{s}\right)^2+X_{2\sigma}^{\prime 2}}}\] 
          \[ I_2 = \frac{U_{i20}}{\sqrt{\left(\dfrac{R_2}{s}\right)^2+X_{2\sigma}^2}} \]&
+         \[ R_2^\prime= X_{2\sigma}^{\prime}\cdot s_k \]
          \\ \hline
             
         \textbf{Verluste Drehmoment}\newline
@@ -132,7 +158,7 @@
         \textcolor{blue}{M-Kennlinie} \newline
         \textcolor{yellow}{Motorbetrieb} \newline
         \textcolor{green}{Generator-Betrieb} \newline \newline
-        $ q_2 $= Anz. Phasen der \newline Statorwicklung\newline
+        $ q_2 $= Anz. Phasen der \newline Rotorwicklung\newline
         \\ \hline
         
         \textbf{Anlauf} \newline
@@ -143,38 +169,18 @@
         $ q_1 $= Anz. Phasen der \newline Statorwicklung\newline
         \\ \hline
         
-        \textbf{Klosssche Gleichung}&
+        \textbf{Klosssche Gleichung}\newline
+        Anlauf \rightarrow s = 1&
         \[ \frac{M}{M_k}=\frac{2}{\frac{s}{s_k}+\frac{s_k}{s}} \]
         \[ \frac{1}{2} s_k^2 - \frac{2 M_k}{M}s_k+s=0 \]&
         $ s_k $= Kippschlupf\newline
-        $ M_k $= Kippmoment
+        $ S_k > s $\newline
+        $ M_k $= Kippmoment\newline
+        $ M_k > M$
         \\ \hline        
               
     \end{longtable}
-\renewcommand{\arraystretch}{1}
-\subsection{Modell der Asynchronmaschine}\vspace{-1cm}
-    \includegraphics[scale = 0.6]{images/ModelASM}
-    \includegraphics[scale = 0.8]{images/ModelASMZeiger}
-
-    \begin{longtable}{| p{.50\textwidth} | p{.45\textwidth}|}
-        \hline
-        \textbf{Grundgleichungen:}\newline
-        \[ \underline{I_1}= \underline{I_{Fe}}+\underline{I_\mu}+\underline{I'_2} \approx \underline{I'_2} \]
-        \[ \underline{U_1}= R_1 \cdot \underline{I_1}+jX_{\sigma 1}\cdot \underline{I_1}+ \underline{U_h} \approx \underline{U_h} \]
-        \textbf{Übersetzungsverhältnis:}\newline
-        \[ u=\frac{N_1 \cdot k_{w1}}{N_2 \cdot k_{w2}}\]
-        \[ \underline{I'_2}=\underline{I_2} \cdot u \]
-        \[ R'_2 = R_2 \cdot u^2 \]\vspace{-0.3cm}&
-        N = Windungszahl \newline
-        $ k_w $ = Wicklungsfaktor \newline
-        $ R_1, X_{\sigma 1} $= Widerstand und Streureaktanz des Stators \newline
-        $ R_2, X_{\sigma 2} $= Widerstand und Streureaktanz des Rotors \newline
-        $ R_{Fe} $= Eisen-Verlustwiderstand \newline
-        $ X_h $= Hauptreaktanz \newline
-        $ U_h $= innere Spannung \newline
-        $ I_\mu $= Magnetisierungsstrom
-        \\ \hline      
-    \end{longtable}
+\clearpage
     \subsubsection{Leerlauf}
     \begin{multicols}{2}
         \begin{minipage}{\linewidth}

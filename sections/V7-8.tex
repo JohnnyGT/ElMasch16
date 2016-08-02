@@ -11,7 +11,7 @@
 \end{itemize}
 \textcolor{red}{Nachteil}:
 \begin{itemize}
-\item Anlaufstrom
+\item hoher Anlaufstrom
 \end{itemize}
 \end{minipage}
 \begin{minipage}{0.33\linewidth}
@@ -37,13 +37,12 @@ Das Drehfeld und der Rotor einer Synchronmaschine rotieren mit derselben Geschwi
         
     	\vspace{-0.7cm}
     	\begin{itemize}
-    		\item Grössere Polpaarzahl \geq 1
+    		\item Grössere Polpaarzahl
     		\item Kleinere Drehzahl
     		\item Wasserkraftwerk
     	\end{itemize} &
         \vspace{-0.7cm}
         \begin{itemize}
-        	\item Polpaarzahl p = 1
         	\item Grössere Drehzahl
         	\item Wärmekraftwerke
         \end{itemize}
@@ -91,9 +90,9 @@ Das Drehfeld und der Rotor einer Synchronmaschine rotieren mit derselben Geschwi
         $U_1\, \widehat{=}$ der Verketteten Spannung
         \\ \hline
         
-        \textbf{Leistung} \newline %TODO FORMELN NACHRECHNEN!!!
+        \textbf{Leistung} \newline 
         \tabbild[scale=0.4]{images/SynchronKennlinie} &
-        $\cos(\varphi) = -\sin(\alpha)$ \newline\newline
+        $\cos(\varphi) = -\sin(\alpha) $ \newline\newline
        	$ (X_d \cdot I_{1Str})^2=U_{1Str}^2+U_{pStr}^2 - 2\cdot U_{1Str}\cdot U_{pStr}\cdot cos(\delta) $ \newline \newline
        	$P_{Str} = U_{Str}\cdot I_{Str}\cdot cos(\varphi)$ \newline
         \textcolor{red}{d} = $-U_p\cdot\sin(\delta)$ \newline
@@ -103,7 +102,7 @@ Das Drehfeld und der Rotor einer Synchronmaschine rotieren mit derselben Geschwi
         $P(\delta) = P_{mech}-P_V = \omega\cdot M - P_V$ \newline
         \textbf{Motorbetrieb:} $\delta > 0$ \newline
         $P(\delta) = P_{mech} + P_V = \omega\cdot M + P_V$ &
-         $\varphi = -\alpha - \dfrac{\pi}{2}$ \newline \newline
+         $\varphi = -\alpha - 90^\degree   \quad\left[ grad \right]$ \newline \newline
         Polradwinkel $\delta =  \measuredangle (U_p, U_1)$  \newline \newline
         $U_P$ ist die Polradspannung, sie entspricht einer fiktiven Grösse! Sie kann wiederum durch ein Zeigerdiagramm bestimmt werden.\newline\newline
         \textbf{ Achte auf Y-$ \Delta $-Umrechnug} \newline
@@ -117,7 +116,10 @@ Das Drehfeld und der Rotor einer Synchronmaschine rotieren mit derselben Geschwi
 		\\ \hline	
 	    \end{longtable}
     
-    \includegraphics[scale = 0.8]{images/KennlinieSynchronmaschine}
+    \begin{minipage}{0.5\linewidth}
+        $ cos(\varphi) = x_{ind} \rightarrow \varphi^\degree >0 $ Strom eilt der Spannung nach\newline
+        $ cos(\varphi) = x_{kap} \rightarrow \varphi^\degree <0 $ Strom eilt der Spannung voraus\newline
+    \end{minipage}
 \subsection{Zeigerdiagramm im Motorbetrieb}
     P > 0 und $\delta$ > 0 \newline \newline
     \includegraphics[width = 12 cm]{images/ZeigerdiagrammSynchronmaschine}
@@ -125,6 +127,7 @@ Das Drehfeld und der Rotor einer Synchronmaschine rotieren mit derselben Geschwi
 \subsection{Zeigerdiagramm im Generatorbetrieb}
     P < 0, $\delta$ < 0  \newline
     \includegraphics[width = 12 cm]{images/ZeigerdiagrammGeneratorbetrieb} \newline \newline
-    \includegraphics[scale = 0.4]{images/Stabilitaet}
+    \includegraphics[scale = 0.35]{images/Stabilitaet}
+    \includegraphics[scale = 0.7]{images/KennlinieSynchronmaschine}
 \clearpage
 \pagebreak

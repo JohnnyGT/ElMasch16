@@ -33,7 +33,7 @@
 \begin{tabular}{| p{.40\textwidth} | p{.40\textwidth}|p{2cm}|}
 \hline
 \vspace{-20pt}\tabbild[scale=0.4]{images/Arbeitsbereiche} &
-\[P = \omega\cdot M = 2\pi\cdot n\cdot M\]
+\[P_{Mech} = \omega\cdot M = 2\pi\cdot n\cdot M\]
 \[M(n) = \dfrac{P_{max}}{2\pi}\cdot\dfrac{1}{n}\] &
 \vspace{0.5cm}$[n] = \dfrac{1}{s}$\\
 \hline
@@ -95,25 +95,29 @@
     \begin{minipage}[b]{0.5\textwidth}
     	\raggedright
     	\includegraphics[scale = 0.8]{images/KennlinieNebenschluss1}
-    \end{minipage}\\
+    \end{minipage}
     
     \begin{longtable}{| p{.25\textwidth} | p{.40\textwidth} | p{.30\textwidth} |}
     	\firsthline
+        \textbf{ Spannungsgleichung}&
+        $I = I_a + I_e$\newline\newline
+        $U = U_a = R_a\cdot I_a + E= R_a\cdot I_a + \omega\cdot\psi$ \newline \newline
+        $I_a = \dfrac{U - E}{R_a}=\dfrac{U - \omega\cdot\psi}{R_a}$ \newline \newline&
+        $\psi = L_e\cdot I_e \, \widehat{=}$ Erregerfluss \newline \newline
+        $E = \omega\cdot\psi$
+        \\ \hline
     	\textbf{Drehmoment}	&
-        $U = U_a = R_a\cdot I_a + \omega\cdot\psi$ \newline \newline
-        $I_a = \dfrac{U - \omega\cdot\psi}{R_a}$ \newline \newline
         $M = I_a\cdot\psi\, = \, I_a \cdot L_e \cdot I_e $ \newline\newline
         $M = \dfrac{U\cdot\psi}{R_a}-\dfrac{\omega\cdot\psi^2}{R_a}$ \newline &
-         Spannungsgleichung \newline der Nebenschluss-Schaltung\newline \newline
-        $\psi = L_e\cdot I_e \, \widehat{=}$ Erregerfluss \newline \newline
+         
         $\omega\, = \, 2\pi\cdot n \quad \left[\dfrac{1}{s}\right]$
         \\ 	\hline
         
     	\textbf{Anlaufmoment} \newline \newline
         $(n = 0)$	&
-        $M_A = \dfrac{U\cdot\psi}{R_a + R_v}$ \newline \newline
-        $I_{Anlauf} \,= \, \dfrac{U}{R_a + R_v} $
-        \[\hspace{-1cm}R_v=\frac{R_a}{2}\left(\frac{\omega_0}{\omega_0-\omega_n}-2\right)=\frac{U^2}{2\omega_0 M}-R_a  \]&
+        $M_A \stackrel{R_v=0}{\rightarrow}M_{Anlauf}  $\newline
+        $M_{Anlauf} = \dfrac{U\cdot\psi}{R_a + R_v}$ \newline \newline
+        $I_{Anlauf} \,= \, \dfrac{U}{R_a + R_v} $&
         $[M] = Nm$ \newline
         $R_a \, \widehat{=}$\, Ankerwiderstand \newline
         $R_v \, \widehat{=}$ Im Ankerkreis in Serie geschalteter Regelungswiderstand (= \textbf{oft 0})
@@ -130,8 +134,10 @@
         $P_{mech} = \omega\cdot M = \omega\cdot\psi\cdot I_a$ &
         \\ \hline
         
-    	\textbf{Leerlaufdrehzahl}&
-        $n_0 = \dfrac{U}{2\pi\cdot\psi}$  \qquad $(M = 0)$&
+    	\textbf{Leerlaufdrehzahl}\newline\newline
+        (M = 0)&
+        $n_0 = \dfrac{U}{2\pi\cdot\psi}$\newline
+        $ \psi = \dfrac{U}{\omega_0} $&
         $[n] = \dfrac{1}{s}$
         \\ \lasthline
     \end{longtable}

@@ -4,18 +4,22 @@
     \renewcommand{\arraystretch}{1}
 \begin{tabular}{|C{0.3\textwidth}|P{0.3\textwidth}|P{0.3\textwidth}|}
 	\hline
-	\textbf{Drehzahl} &
+	\textbf{Drehzahl n} &
     \[n = 60\cdot \dfrac{f}{p}\] &
     \vspace{0.1cm}n - Drehzahl [n] = $\dfrac{1}{min}$ \newline 
     f - Frequenz \newline
     p - Polpaarzahl 
     \\ \hline
-	\textbf{Nutzahl} &
+    \textbf{Polpaarzahl p}&
+    \[ p= 60\cdot \dfrac{f}{n} \]&
+    p=floor(p) bei ASM
+    \\ \hline 
+	\textbf{Nutzahl N} &
     \[ N = 2p\cdot q\cdot m\] &
     2p - Polzahl \newline 
     q - Nutzahl pro Phasenband \newline
     m - Strangzahl pro Phase 
-    \\ \hline						 
+    \\ \hline  						 
 \end{tabular}
 
 \subsection{Beispiel}
