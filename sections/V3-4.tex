@@ -59,9 +59,10 @@
     \textbf{Ankerwicklung}\newline
     {\scriptsize \qquad Rotor}		&
     $ U_a = R_a \cdot I_a + L_a \cdot \dfrac{dI_a}{dt} + E $\newline\newline
-     $E = \omega\cdot\psi$ &
+     $E = \omega\cdot\psi$\newline \newline
+     $ \psi = L_e\cdot I_e = \dfrac{U_a}{\omega_0} $ &
     Spannungsgleichung des \newline Rotorkreises
-    \newline $\psi = L_e\cdot I_e \, \widehat{=}$ Erreger-/Hauptfluss \newline
+    \newline $\psi \, \widehat{=}$ Erreger-/Hauptfluss \newline
     $\omega = 2\pi\cdot n$ \newline
     \quad n $\widehat{=}$ Drehzahl des Läufers $\left[\dfrac{1}{s}\right]$\newline 
     \\ \hline
@@ -99,17 +100,17 @@
     
     \begin{longtable}{| p{.25\textwidth} | p{.40\textwidth} | p{.30\textwidth} |}
     	\firsthline
-        \textbf{ Spannungsgleichung}&
-        $I = I_a + I_e$\newline\newline
-        $U = U_a = R_a\cdot I_a + E= R_a\cdot I_a + \omega\cdot\psi$ \newline \newline
-        $I_a = \dfrac{U - E}{R_a}=\dfrac{U - \omega\cdot\psi}{R_a}$ \newline \newline&
+        \textbf{ Spannungsgleichung}\newline
+        $ U = U_a = U_e $\newline
+        $I = I_a + I_e$&
+        $U = \underbrace{R_a\cdot I_a + E}_{\substack{U_a}} = \underbrace{I_e\cdot R_e + L_e\cdot \dot{I_e}}_{\substack{U_e}} $ \newline \newline
+        $I_a = \dfrac{U - E}{R_a}=\dfrac{U - \omega\cdot\psi}{R_a}$ \newline&
         $\psi = L_e\cdot I_e \, \widehat{=}$ Erregerfluss \newline \newline
         $E = \omega\cdot\psi$
         \\ \hline
     	\textbf{Drehmoment}	&
         $M = I_a\cdot\psi\, = \, I_a \cdot L_e \cdot I_e $ \newline\newline
-        $M = \dfrac{U\cdot\psi}{R_a}-\dfrac{\omega\cdot\psi^2}{R_a}$ \newline &
-         
+        $M = \dfrac{U\cdot\psi -\omega\cdot\psi^2 }{R_a}$ \newline &
         $\omega\, = \, 2\pi\cdot n \quad \left[\dfrac{1}{s}\right]$
         \\ 	\hline
         
@@ -127,7 +128,7 @@
         Im stationären Betrieb: \quad $\left(\dfrac{d}{dt} = 0\right)$ \newline \newline
         $P_{el} = P_e + P_a = U_e\cdot I_e + U_a\cdot I_a$ \newline \newline
         $P_{el} = \underbrace{R_e\cdot I_e^2}_{\substack{Ohmsche \\ Erregerverluste}} + \underbrace{R_a\cdot I_a^2}_{\substack{Ohmsche \\ Ankerverluste}} + \underbrace{\omega\cdot\psi\cdot I_a}_{\substack{Mechanische\\Leistung}}$ \newline &
-        $[P] = W$
+        $P_{el}= U \cdot I \qquad [W]$
         \\ \hline
         
     	\textbf{Mechanische Leistung} &
@@ -138,7 +139,7 @@
         (M = 0)&
         $n_0 = \dfrac{U}{2\pi\cdot\psi}$\newline
         $ \psi = \dfrac{U}{\omega_0} $&
-        $[n] = \dfrac{1}{s}$
+        $n = \left[\dfrac{1}{s}\right]$
         \\ \lasthline
     \end{longtable}
     \clearpage
@@ -168,8 +169,9 @@
         \\\hline
         
     	\textbf{Anlaufmoment}	&
-        $M_A = \dfrac{L_e\cdot U^2}{\left(R_a + R_e\right)^2}$ \qquad $\left(n = 0\right)$ &
-        $[M] = Nm$ 
+        $M_A = \dfrac{L_e\cdot U^2}{\left(R_a + R_e + R_v\right)^2}$ \qquad $\left(n = 0\right)$ &
+        $[M] = Nm$\newline
+        $ R_v $= Vorwiederstand meistens 0! 
         \\ \hline
         
     	\textbf{Bezugsdrehzahl}&
