@@ -25,6 +25,7 @@ UE-Aufgaben und eigenen Praktikumsaufzeichnungen sowie der Taschenrechner erlaub
    - Stefan Reinli  stefan.reinli@hsr.ch  
    - Luca Mazzoleni luca.mazzoleni@hsr.ch  
    - Michel Gisler michel.gisler@hsr.ch
+   - Severin Kundert severin.kundert@hsr.ch
 
 ## License
 
